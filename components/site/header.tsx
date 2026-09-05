@@ -7,10 +7,10 @@ import {
   ClockIcon,
   MapPinIcon,
   MenuIcon,
-  MessageCircleIcon,
+  WhatsAppIcon,
   PhoneIcon,
   SearchIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -106,7 +106,7 @@ export function Header() {
           </Button>
           <Button asChild size="sm" className="hidden lg:inline-flex">
             <a href={waLink(waGeneralMessage())} target="_blank" rel="noopener noreferrer">
-              <MessageCircleIcon />
+              <WhatsAppIcon />
               Konsultasi Aki
             </a>
           </Button>
@@ -152,7 +152,7 @@ export function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <MessageCircleIcon />
+                    <WhatsAppIcon />
                     Tanya Aki yang Cocok
                   </a>
                 </Button>

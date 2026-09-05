@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MessageCircleIcon, ArrowRightIcon } from "lucide-react";
+import { WhatsAppIcon, ArrowRightIcon } from "@/lib/icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BatteryArt } from "@/components/site/battery-art";
@@ -127,7 +127,7 @@ export function ProductCard({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircleIcon />
+                <WhatsAppIcon />
                 <span className="sr-only sm:not-sr-only">Tanya</span>
               </a>
             </Button>

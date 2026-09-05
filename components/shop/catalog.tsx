@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { MessageCircleIcon, SearchIcon, SlidersHorizontalIcon, XIcon } from "lucide-react";
+import { WhatsAppIcon, SearchIcon, SlidersHorizontalIcon, XIcon } from "@/lib/icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -274,7 +274,7 @@ export function Catalog({ products }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircleIcon />
+                <WhatsAppIcon />
                 Tanya Aki yang Cocok
               </a>
             </Button>

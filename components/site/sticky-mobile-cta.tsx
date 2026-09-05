@@ -1,4 +1,4 @@
-import { MapPinIcon, MessageCircleIcon, PhoneIcon } from "lucide-react";
+import { MapPinIcon, WhatsAppIcon, PhoneIcon } from "@/lib/icons";
 import { business } from "@/config/business";
 import { waGeneralMessage, waLink } from "@/lib/whatsapp";
 
@@ -16,7 +16,7 @@ export function StickyMobileCTA() {
           className="flex h-14 flex-col items-center justify-center gap-0.5 bg-[#15803D] text-white"
           aria-label="Chat WhatsApp"
         >
-          <MessageCircleIcon className="size-4.5" />
+          <WhatsAppIcon className="size-4.5" />
           <span className="text-[11px] font-bold">WhatsApp</span>
         </a>
         <a

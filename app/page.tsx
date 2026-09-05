@@ -8,11 +8,11 @@ import {
   ClockIcon,
   GaugeIcon,
   MapPinIcon,
-  MessageCircleIcon,
+  WhatsAppIcon,
   PhoneIcon,
   QuoteIcon,
   WrenchIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -39,7 +39,7 @@ import { waGeneralMessage, waLink } from "@/lib/whatsapp";
 export const metadata: Metadata = buildMetadata({
   title: `Toko Aki ${business.city} | Aki Mobil & Motor — ${business.name}`,
   description:
-    "Cari aki mobil dan motor di Jakarta? Lihat pilihan aki, spesifikasi dan harga di Berkah Aki. Tanya stok dan tipe aki yang cocok langsung via WhatsApp.",
+    "Cari aki mobil dan motor di Jakarta? Lihat pilihan aki, spesifikasi dan harga di Bengkel Aki. Tanya stok dan tipe aki yang cocok langsung via WhatsApp.",
   path: "/",
 });
 
@@ -48,7 +48,7 @@ const serviceIcons = {
   "ganti-motor": BikeIcon,
   "cek-aki": BatteryChargingIcon,
   "cek-tegangan": GaugeIcon,
-  konsultasi: MessageCircleIcon,
+  konsultasi: WhatsAppIcon,
   pemasangan: WrenchIcon,
 } as const;
 
@@ -228,7 +228,7 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <MessageCircleIcon />
+              <WhatsAppIcon />
               Tanya Aki via WhatsApp
             </a>
           </Button>
@@ -398,7 +398,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircleIcon />
+                <WhatsAppIcon />
                 Chat WhatsApp
               </a>
             </Button>

@@ -5,9 +5,9 @@ import Link from "next/link";
 import {
   BikeIcon,
   CarIcon,
-  MessageCircleIcon,
+  WhatsAppIcon,
   SearchIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -164,7 +164,7 @@ export function BatteryFinder() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 font-bold text-primary hover:underline"
           >
-            <MessageCircleIcon className="size-3.5" aria-hidden />
+            <WhatsAppIcon className="size-3.5" aria-hidden />
             Tanya via WhatsApp
           </a>
         </p>

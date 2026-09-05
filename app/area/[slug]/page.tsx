@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import {
   ClockIcon,
   MapPinIcon,
-  MessageCircleIcon,
+  WhatsAppIcon,
   PhoneIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { SectionHeading } from "@/components/site/section-heading";
@@ -68,7 +68,7 @@ export default async function AreaPage({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircleIcon />
+                <WhatsAppIcon />
                 Tanya Stok dari {area.name}
               </a>
             </Button>

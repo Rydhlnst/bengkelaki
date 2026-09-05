@@ -4,9 +4,9 @@ import {
   CircleCheckIcon,
   ClockIcon,
   MapPinIcon,
-  MessageCircleIcon,
+  WhatsAppIcon,
   PhoneIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
@@ -123,7 +123,7 @@ export default function TentangPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MessageCircleIcon />
+                  <WhatsAppIcon />
                   Chat WhatsApp
                 </a>
               </Button>

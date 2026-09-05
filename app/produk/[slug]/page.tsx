@@ -4,11 +4,11 @@ import type { Metadata } from "next";
 import {
   CircleHelpIcon,
   MapPinIcon,
-  MessageCircleIcon,
+  WhatsAppIcon,
   PhoneIcon,
   ShieldCheckIcon,
   WrenchIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BatteryArt } from "@/components/site/battery-art";
@@ -206,7 +206,7 @@ export default async function ProductPage({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircleIcon />
+                <WhatsAppIcon />
                 Pesan / Tanya via WhatsApp
               </a>
             </Button>
@@ -324,7 +324,7 @@ export default async function ProductPage({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircleIcon />
+                <WhatsAppIcon />
                 Tanya Stok &amp; Kecocokan
               </a>
             </Button>

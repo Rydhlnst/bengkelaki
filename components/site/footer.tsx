@@ -3,32 +3,14 @@ import {
   ClockIcon,
   MapPinIcon,
   PhoneIcon,
-  MessageCircleIcon,
-} from "lucide-react";
+  WhatsAppIcon,
+  InstagramIcon,
+} from "@/lib/icons";
 import { Logo } from "@/components/site/logo";
 import { business } from "@/config/business";
 import { brands } from "@/data/brands";
 import { areas } from "@/data/areas";
 import { waGeneralMessage, waLink } from "@/lib/whatsapp";
-
-function InstagramGlyph({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-      className={className}
-    >
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-    </svg>
-  );
-}
 
 export function Footer() {
   return (
@@ -49,7 +31,7 @@ export function Footer() {
               aria-label="Chat WhatsApp"
               className="grid size-9 place-items-center rounded-sm bg-white/10 transition-colors hover:bg-white/20"
             >
-              <MessageCircleIcon className="size-4" />
+              <WhatsAppIcon className="size-4" />
             </a>
             <a
               href={`tel:${business.phoneIntl}`}
@@ -65,7 +47,7 @@ export function Footer() {
               aria-label="Instagram"
               className="grid size-9 place-items-center rounded-sm bg-white/10 transition-colors hover:bg-white/20"
             >
-              <InstagramGlyph className="size-4" />
+              <InstagramIcon className="size-4" />
             </a>
           </div>
         </div>
@@ -173,7 +155,7 @@ export function Footer() {
               </a>
             </li>
             <li className="flex items-start gap-2.5">
-              <MessageCircleIcon className="mt-0.5 size-4 shrink-0 text-white/50" />
+              <WhatsAppIcon className="mt-0.5 size-4 shrink-0 text-white/50" />
               <a
                 href={waLink(waGeneralMessage())}
                 target="_blank"

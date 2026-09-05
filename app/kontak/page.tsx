@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import {
   ClockIcon,
   MapPinIcon,
-  MessageCircleIcon,
+  WhatsAppIcon,
   PhoneIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { SectionHeading } from "@/components/site/section-heading";
@@ -29,7 +29,7 @@ const contactFaqs = faqs.filter((f) =>
 export default function KontakPage() {
   const contactMethods = [
     {
-      icon: MessageCircleIcon,
+      icon: WhatsAppIcon,
       title: "WhatsApp",
       description: "Paling cepat dibalas. Tanya stok, harga, dan tipe aki yang cocok.",
       action: (

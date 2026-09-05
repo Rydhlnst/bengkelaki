@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRightIcon, CheckIcon, MapPinIcon, MessageCircleIcon, ZapIcon } from "lucide-react";
+import { ArrowUpRightIcon, CheckIcon, MapPinIcon, WhatsAppIcon, ZapIcon } from "@/lib/icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,7 +20,7 @@ export function Hero() {
           <p className="mt-6 max-w-md text-sm leading-7 text-slate-300 sm:text-base">Dari rutinitas pagi sampai perjalanan pulang. Temukan aki mobil &amp; motor yang tepat, dengan harga jelas dan bantuan pemasangan.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg" className="h-12 bg-cyan-300 text-slate-950 hover:bg-cyan-200"><Link href="#cari-aki">Temukan Aki Saya <ArrowUpRightIcon/></Link></Button>
-            <Button asChild size="lg" variant="outline" className="h-12 border-white/25 text-white hover:bg-white/10 hover:text-white"><a href={waLink(waGeneralMessage())} target="_blank" rel="noopener noreferrer"><MessageCircleIcon/> Konsultasi Dulu</a></Button>
+            <Button asChild size="lg" variant="outline" className="h-12 border-white/25 text-white hover:bg-white/10 hover:text-white"><a href={waLink(waGeneralMessage())} target="_blank" rel="noopener noreferrer"><WhatsAppIcon/> Konsultasi Dulu</a></Button>
           </div>
           <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-xs text-slate-300">{["Harga transparan", "Pilihan multi-brand", "Bantu pasang"].map(point => <li key={point} className="flex items-center gap-1.5"><CheckIcon className="size-4 text-cyan-300"/>{point}</li>)}</ul>
         </div>

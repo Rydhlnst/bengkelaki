@@ -5,7 +5,7 @@
 
 export const business = {
   // TODO: ganti nama bengkel
-  name: "Berkah Aki",
+  name: "Bengkel Aki",
   tagline: "Toko & Bengkel Aki Mobil Motor",
   shortDescription:
     "Toko dan bengkel aki di Jakarta. Jual aki mobil dan motor berbagai merek, lengkap dengan layanan pemeriksaan dan pemasangan.",
@@ -21,10 +21,10 @@ export const business = {
   phoneDisplay: "0812-3456-7890",
   phoneIntl: "+6281234567890",
   whatsapp: "6281234567890",
-  email: "halo@berkahaki.example",
+  email: "halo@bengkelaki.example",
 
   // TODO: ganti link sosial & maps
-  instagram: "https://instagram.com/berkahaki",
+  instagram: "https://instagram.com/bengkelaki",
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Jakarta",
   googleMapsEmbed:
     "https://www.google.com/maps?q=Jakarta&output=embed",
@@ -38,7 +38,7 @@ export const business = {
   hoursNote: "Jam operasional bisa berubah saat hari besar.",
 
   // TODO: ganti dengan domain asli saat deploy
-  siteUrl: "https://www.berkahaki.example",
+  siteUrl: "https://www.bengkelaki.example",
 
   // Aktifkan hanya jika layanan benar-benar tersedia.
   onSiteService: false,

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRightIcon, BikeIcon, CarIcon } from "lucide-react";
+import { ArrowUpRightIcon, BikeIcon, CarIcon } from "@/lib/icons";
 import { Card, CardContent } from "@/components/ui/card";
 import { BatteryArt } from "@/components/site/battery-art";
 import { getProduct } from "@/data/products";

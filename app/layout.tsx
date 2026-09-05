@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${business.name}`,
   },
   description:
-    "Cari aki mobil dan motor di Jakarta? Lihat pilihan aki, spesifikasi dan harga di Berkah Aki. Tanya stok dan tipe aki yang cocok langsung via WhatsApp.",
+    "Cari aki mobil dan motor di Jakarta? Lihat pilihan aki, spesifikasi dan harga di Bengkel Aki. Tanya stok dan tipe aki yang cocok langsung via WhatsApp.",
   robots: { index: true, follow: true },
   openGraph: {
     siteName: business.name,

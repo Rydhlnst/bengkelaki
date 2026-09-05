@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { CircleCheckIcon, MessageCircleIcon } from "lucide-react";
+import { CircleCheckIcon, WhatsAppIcon } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { SectionHeading } from "@/components/site/section-heading";
@@ -86,7 +86,7 @@ export default async function BrandPage({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <MessageCircleIcon />
+              <WhatsAppIcon />
               Tanya Aki {brand.name}
             </a>
           </Button>

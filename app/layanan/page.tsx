@@ -6,9 +6,9 @@ import {
   CarIcon,
   CircleCheckIcon,
   GaugeIcon,
-  MessageCircleIcon,
+  WhatsAppIcon,
   WrenchIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { SectionHeading } from "@/components/site/section-heading";
@@ -31,7 +31,7 @@ const serviceIcons = {
   "ganti-motor": BikeIcon,
   "cek-aki": BatteryChargingIcon,
   "cek-tegangan": GaugeIcon,
-  konsultasi: MessageCircleIcon,
+  konsultasi: WhatsAppIcon,
   pemasangan: WrenchIcon,
 } as const;
 
@@ -87,7 +87,7 @@ export default function LayananPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <MessageCircleIcon />
+              <WhatsAppIcon />
               Tanya Layanan via WhatsApp
             </a>
           </Button>
@@ -168,7 +168,7 @@ export default function LayananPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircleIcon />
+                <WhatsAppIcon />
                 Chat WhatsApp
               </a>
             </Button>

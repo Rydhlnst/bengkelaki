@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRightIcon, MessageCircleIcon } from "lucide-react";
+import { ArrowRightIcon, WhatsAppIcon } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { SectionHeading } from "@/components/site/section-heading";
@@ -77,7 +77,7 @@ export function VehicleCategory({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircleIcon />
+                <WhatsAppIcon />
                 Tanya Aki yang Cocok
               </a>
             </Button>

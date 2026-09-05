@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ZapIcon } from "lucide-react";
 import { business } from "@/config/business";
 import { cn } from "cn";
 
@@ -13,15 +12,9 @@ export function Logo({
   return (
     <Link
       href="/"
-      className={cn("flex shrink-0 items-center gap-2.5", className)}
+      className={cn("flex shrink-0 items-center", className)}
       aria-label={`${business.name} — beranda`}
     >
-      <span
-        aria-hidden
-        className="grid size-9 shrink-0 place-items-center rounded-sm bg-primary text-primary-foreground"
-      >
-        <ZapIcon className="size-5" />
-      </span>
       <span className="flex min-w-0 flex-col leading-none">
         <span
           className={cn(

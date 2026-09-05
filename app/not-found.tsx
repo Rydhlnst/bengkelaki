@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRightIcon, MessageCircleIcon } from "lucide-react";
+import { ArrowRightIcon, WhatsAppIcon } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import { business } from "@/config/business";
 import { waGeneralMessage, waLink } from "@/lib/whatsapp";
@@ -28,7 +28,7 @@ export default function NotFound() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MessageCircleIcon />
+            <WhatsAppIcon />
             Chat WhatsApp
           </a>
         </Button>
