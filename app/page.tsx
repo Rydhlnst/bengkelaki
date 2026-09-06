@@ -1,410 +1,85 @@
+import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRightIcon,
-  BikeIcon,
-  BatteryChargingIcon,
-  CarIcon,
-  CircleCheckIcon,
-  ClockIcon,
-  GaugeIcon,
-  MapPinIcon,
-  WhatsAppIcon,
-  PhoneIcon,
-  QuoteIcon,
-  WrenchIcon,
-} from "@/lib/icons";
 import type { Metadata } from "next";
+import { ArrowRightIcon, CheckIcon, ClockIcon, PhoneIcon, ShieldCheckIcon, TagIcon, TruckIcon, WhatsAppIcon, WrenchIcon, ZapIcon } from "@/lib/icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CategoryCards } from "@/components/home/category-cards";
+import { Card, CardContent } from "@/components/ui/card";
 import { Hero } from "@/components/home/hero";
+import { CategoryCards } from "@/components/home/category-cards";
 import { BatteryFinder } from "@/components/home/battery-finder";
-import { SectionHeading } from "@/components/site/section-heading";
+import { JakartaCoverage } from "@/components/home/jakarta-coverage";
+import { ServiceSupportGrid } from "@/components/home/service-support-grid";
+import { GalleryGrid } from "@/components/home/gallery-grid";
+import { Testimonials } from "@/components/home/testimonials";
 import { FaqSection } from "@/components/site/faq-section";
-import { ProductCard } from "@/components/shop/product-card";
-import { BrandCard } from "@/components/brand/brand-card";
+import { SectionHeading } from "@/components/site/section-heading";
 import { business } from "@/config/business";
-import { products } from "@/data/products";
-import {
-  availableBatteryBrands,
-  candidateBatteryBrands,
-} from "@/data/battery-brands";
-import { services, whyChooseUs } from "@/data/services";
-import { areas } from "@/data/areas";
 import { faqs } from "@/data/faqs";
-import { testimonials } from "@/data/testimonials";
-import { buildMetadata } from "@/lib/seo";
-import { waGeneralMessage, waLink } from "@/lib/whatsapp";
+import { products, type Product } from "@/data/products";
+import { getProductReferenceImage, referenceMedia, referenceSourceUrl } from "@/data/reference-media";
+import { formatIDR } from "@/lib/format";
+import { waGeneralMessage, waLink, waProductMessage } from "@/lib/whatsapp";
 
-export const metadata: Metadata = buildMetadata({
-  title: `Toko Aki ${business.city} | Aki Mobil & Motor — ${business.name}`,
-  description:
-    "Cari aki mobil dan motor di Jakarta? Lihat pilihan aki, spesifikasi dan harga di Bengkel Aki. Tanya stok dan tipe aki yang cocok langsung via WhatsApp.",
-  path: "/",
-});
+export const metadata: Metadata = {
+  title: "Jasa Aki 24 Jam Jakarta | " + business.name,
+  description: "Layanan aki panggilan 24 jam Jakarta. Cek, ganti, jumper, dan pasang aki langsung di lokasi Anda dengan teknisi profesional.",
+};
 
-const serviceIcons = {
-  "ganti-mobil": CarIcon,
-  "ganti-motor": BikeIcon,
-  "cek-aki": BatteryChargingIcon,
-  "cek-tegangan": GaugeIcon,
-  konsultasi: WhatsAppIcon,
-  pemasangan: WrenchIcon,
-} as const;
-
-const quickCategories = [
+const showcaseProducts = products.filter((product) => getProductReferenceImage(product.brandSlug, product.vehicleType)).slice(0, 8);
+const proofItems = [
+  { label: "Buka 24 Jam", icon: ClockIcon },
+  { label: "Datang ke Lokasi", icon: TruckIcon },
+  { label: "Cek & Pasang", icon: WrenchIcon },
+  { label: "Khusus Jakarta", icon: ShieldCheckIcon },
+];
+const trustItems = [
+  { label: "Respon cepat", icon: ZapIcon },
+  { label: "Teknisi berpengalaman", icon: WrenchIcon },
+  { label: "Produk bergaransi", icon: ShieldCheckIcon },
+  { label: "Harga transparan", icon: TagIcon },
+];
+const quickLinks = [
+  { label: "Produk", href: "#produk" },
+  { label: "Jasa Aki", href: "#layanan" },
   { label: "Aki Mobil", href: "/aki-mobil" },
   { label: "Aki Motor", href: "/aki-motor" },
-  { label: "Aki Basah", href: "/produk?tipe=basah" },
-  { label: "Aki Kering / MF", href: "/produk?tipe=mf" },
-  { label: "Aki Premium", href: "/merek/motobatt" },
-  { label: "Berdasarkan Brand", href: "/produk" },
+  { label: "Testimoni", href: "#testimoni" },
+  { label: "Dokumentasi", href: "#dokumentasi" },
+  { label: "Jakarta", href: "#area-layanan" },
+  { label: "FAQ", href: "#faq" },
+];
+const steps = [
+  { number: "01", title: "Kirim Lokasi", description: "WhatsApp tipe kendaraan dan lokasi Anda di Jakarta." },
+  { number: "02", title: "Kami Cek Kebutuhan", description: "Tim membantu memastikan tipe aki dan penanganan yang diperlukan." },
+  { number: "03", title: "Teknisi Berangkat", description: "Teknisi datang membawa aki dan perlengkapan yang sesuai." },
 ];
 
 export default function HomePage() {
-  const popular = products
-    .filter((p) => p.popular || p.featured)
-    .slice(0, 4);
-
   return (
     <>
       <Hero />
+      <nav className="bg-white shadow-[0_1px_12px_rgba(23,34,49,0.06)]" aria-label="Akses cepat"><div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 py-2">{quickLinks.map((link) => <Link key={link.label} href={link.href} className="shrink-0 rounded-md px-3 py-2 text-xs font-black text-brand-dark transition-colors hover:bg-brand-yellow/60">{link.label}</Link>)}</div></nav>
+      <section className="bg-brand-yellow/90" aria-label="Bukti layanan"><div className="mx-auto grid max-w-6xl grid-cols-2 md:grid-cols-4">{proofItems.map(({ label, icon: Icon }) => <div key={label} className="flex items-center gap-2 px-4 py-4 text-sm font-black text-brand-dark md:justify-center"><Icon className="size-4 shrink-0" /><span>{label}</span></div>)}</div></section>
 
-      {/* Battery finder */}
-      <section className="mx-auto w-full max-w-6xl px-4 py-10 md:py-12" id="cari-aki">
-        <SectionHeading
-          eyebrow="Cari Aki"
-          title="Cari Aki untuk Kendaraan Anda"
-          description="Pilih jenis dan merek kendaraan, lalu lihat pilihan aki yang tersedia. Tanpa perlu menebak tipe aki."
-        />
-        <div className="mt-6">
-          <BatteryFinder />
-        </div>
-      </section>
+      <section className="mx-auto max-w-6xl px-4 py-16 md:py-20" id="tentang"><div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center"><div className="relative overflow-hidden rounded-xl bg-white p-2 shadow-xl shadow-brand-dark/10"><div className="relative aspect-[4/3] overflow-hidden rounded-lg"><Image src={referenceMedia.profile.src} alt={referenceMedia.profile.alt} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" /></div><div className="absolute right-6 bottom-6 rounded-lg bg-brand-dark px-4 py-3 text-white shadow-lg"><p className="text-[10px] font-black tracking-[0.16em] text-brand-yellow uppercase">Profil layanan</p><p className="mt-1 text-sm font-bold">Siap bantu di lokasi</p></div></div><div><Badge className="bg-brand-red px-2.5 py-1 text-[11px] font-black tracking-wide text-white uppercase">Tentang Kami</Badge><h2 className="mt-4 max-w-xl text-3xl font-black tracking-tight md:text-5xl">Aki soak tidak perlu membuat rencana Anda berhenti.</h2><p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">{business.shortDescription}</p><div className="mt-7 grid gap-3 sm:grid-cols-3">{["Teknisi profesional", "Harga transparan", "Konsultasi sebelum beli"].map((item) => <div key={item} className="flex items-start gap-2 pt-3 text-sm font-bold"><CheckIcon className="mt-0.5 size-4 shrink-0 text-brand-red" />{item}</div>)}</div><Button asChild className="mt-8 bg-brand-red text-white hover:bg-brand-red/90"><Link href="/tentang">Kenal Lebih Dekat <ArrowRightIcon /></Link></Button></div></div></section>
 
-      {/* Category cards */}
-      <section className="border-y bg-muted">
-        <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-          <SectionHeading
-            eyebrow="Katalog"
-            title="Pilih Aki Sesuai Kendaraan"
-            description="Semua aki yang dijual lengkap dengan spesifikasi dan kisaran harganya."
-          />
-          <CategoryCards />
-          <ul className="mt-6 flex flex-wrap gap-2" aria-label="Kategori produk">
-            {quickCategories.map((c) => (
-              <li key={c.label}>
-                <Link
-                  href={c.href}
-                  className="inline-block rounded-sm border bg-background px-3.5 py-2 text-xs font-bold transition-colors hover:border-primary hover:text-primary"
-                >
-                  {c.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Popular products */}
-      <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <SectionHeading
-            eyebrow="Katalog"
-            title="Aki Paling Banyak Dicari"
-            description="Tipe-tipe yang paling sering dibeli pelanggan. Harga bisa berubah, konfirmasi via WhatsApp untuk stok terbaru."
-          />
-          <Button asChild variant="outline" className="shrink-0">
-            <Link href="/produk">
-              Lihat Semua Produk
-              <ArrowRightIcon data-icon="inline-end" />
-            </Link>
-          </Button>
-        </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {popular.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
-
-      {/* Why choose us */}
-      <section className="border-y bg-muted">
-        <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-          <SectionHeading
-            eyebrow="Alasan Pelanggan"
-            title={`Kenapa Beli Aki di ${business.name}?`}
-          />
-          <div className="mt-8 grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
-            {whyChooseUs.map((item) => (
-              <div key={item.title} className="flex flex-col gap-2 border-l-2 border-primary pl-4">
-                <h3 className="flex items-center gap-2 text-base font-extrabold tracking-tight">
-                  <CircleCheckIcon className="size-4.5 shrink-0 text-primary" aria-hidden />
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-        <SectionHeading
-          eyebrow="Layanan Bengkel"
-          title="Bukan Cuma Jual Aki"
-          description="Datang bukan hanya untuk membeli. Kami bantu cek kondisi aki Anda dulu, supaya tidak beli kalau belum perlu."
-        />
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
-            const Icon = serviceIcons[service.icon];
-            return (
-              <Link
-                key={service.slug}
-                href={`/layanan#${service.slug}`}
-                className="group flex flex-col gap-3 rounded-md border bg-card p-5 transition-shadow hover:shadow-md"
-              >
-                <span className="grid size-11 place-items-center rounded-sm bg-primary/10 text-primary">
-                  <Icon className="size-5.5" aria-hidden />
-                </span>
-                <h3 className="text-sm font-extrabold tracking-wide uppercase group-hover:text-primary">
-                  {service.name}
-                </h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {service.shortDescription}
-                </p>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Brands */}
-      <section className="border-y bg-muted">
-        <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-          <SectionHeading
-            eyebrow="Merek"
-            title="Pilihan Merek Aki"
-            description="Berbagai pilihan aki dari merek terpercaya untuk mobil dan motor. Konsultasikan tipe kendaraan Anda untuk mendapatkan aki yang paling sesuai."
-          />
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-            {availableBatteryBrands.map((brand) => (
-              <BrandCard key={brand.id} brand={brand} />
-            ))}
-          </div>
-          <p className="mt-8 text-xs font-bold tracking-[0.14em] text-muted-foreground uppercase">
-            Brand lain yang dikenal di pasar Indonesia
-          </p>
-          <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {candidateBatteryBrands.map((brand) => (
-              <BrandCard key={brand.id} brand={brand} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sales assistance CTA */}
-      <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-        <div className="flex flex-col items-start gap-6 rounded-md border bg-card p-6 md:flex-row md:items-center md:justify-between md:p-8">
-          <div className="flex flex-col gap-2.5">
-            <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl">
-              Tidak Tahu Aki yang Cocok?
-            </h2>
-            <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-              Tidak perlu menebak tipe aki kendaraan Anda. Kirim merek, tipe,
-              dan tahun kendaraan melalui WhatsApp. Kami bantu rekomendasikan
-              pilihan aki yang sesuai.
-            </p>
-            <p className="text-xs font-semibold text-muted-foreground">
-              Konsultasi cepat sebelum datang ke bengkel.
-            </p>
-          </div>
-          <Button asChild size="lg" className="shrink-0">
-            <a
-              href={waLink(waGeneralMessage())}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon />
-              Tanya Aki via WhatsApp
-            </a>
-          </Button>
-        </div>
-      </section>
-
-      {/* Local SEO */}
-      <section className="border-y bg-muted">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:py-16 lg:grid-cols-[1.2fr_1fr]">
-          <div className="flex flex-col gap-4">
-            <SectionHeading
-              eyebrow={`Toko Aki ${business.city}`}
-              title={`Toko Aki ${business.city} untuk Mobil & Motor`}
-            />
-            <div className="flex flex-col gap-3 text-sm leading-relaxed text-muted-foreground md:text-base">
-              <p>Sedang mencari toko aki di {business.city}?</p>
-              <p>
-                {business.name} menyediakan berbagai pilihan aki mobil dan
-                motor untuk berbagai jenis kendaraan — dari city car, MPV,
-                SUV, kendaraan niaga, sampai motor matic dan sport.
-              </p>
-              <p>
-                Anda dapat melihat katalog terlebih dahulu melalui website,
-                lalu menghubungi kami untuk mengecek stok, harga terbaru, dan
-                memastikan tipe aki yang sesuai dengan kendaraan Anda.
-              </p>
-              <p>
-                Untuk kunjungan bengkel di {business.city}, konfirmasi alamat terlebih dahulu. Datang
-                langsung untuk pemeriksaan aki dan pemasangan, atau konfirmasi
-                dulu via WhatsApp kalau ingin memastikan stok.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4 rounded-md border bg-card p-6">
-            <h3 className="font-heading text-base font-extrabold tracking-wide uppercase">
-              Kunjungi Bengkel Kami
-            </h3>
-            <ul className="flex flex-col gap-3.5 text-sm">
-              <li className="flex items-start gap-2.5">
-                <MapPinIcon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
-                <span className="text-muted-foreground">{business.address}</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <ClockIcon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
-                <span className="flex flex-col gap-0.5 text-muted-foreground">
-                  {business.hours.map((h) => (
-                    <span key={h.day}>
-                      <span className="font-semibold text-foreground">{h.day}</span> {h.time}
-                    </span>
-                  ))}
-                </span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <PhoneIcon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
-                <a href={`tel:${business.phoneIntl}`} className="font-bold hover:underline">
-                  {business.phoneDisplay}
-                </a>
-              </li>
-            </ul>
-            <div className="mt-auto flex flex-col gap-2.5">
-              <Button asChild>
-                <a
-                  href={business.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MapPinIcon />
-                  Lihat Area Jakarta
-                </a>
-              </Button>
-              <Button asChild variant="outline">
-                <Link href="/kontak">Halaman Kontak</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service areas */}
-      <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-        <SectionHeading
-          eyebrow="Area Layanan"
-          title={`Melayani Pembelian Aki di ${business.city} dan Sekitarnya`}
-          description="Pelanggan dari area sekitar bisa cek katalog dan konfirmasi stok dulu via WhatsApp sebelum datang."
-        />
-        <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-          {areas.map((area) => (
-            <li key={area.slug}>
-              <Link
-                href={`/area/${area.slug}`}
-                className="flex flex-col gap-1 rounded-md border bg-card p-4 transition-shadow hover:shadow-md"
-              >
-                <span className="flex items-center gap-1.5 text-sm font-extrabold">
-                  <MapPinIcon className="size-4 text-primary" aria-hidden />
-                  {area.name}
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  Aki mobil &amp; motor
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Testimonials */}
-      <section className="border-y bg-muted">
-        <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-          <SectionHeading
-            eyebrow="Testimoni"
-            title="Sudah Banyak Kendaraan Kembali Jalan"
-          />
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {testimonials.map((t) => (
-              <figure key={t.name} className="flex flex-col gap-4 rounded-md border bg-card p-5">
-                <QuoteIcon className="size-5 text-primary" aria-hidden />
-                <blockquote className="text-sm leading-relaxed text-foreground/85">
-                  “{t.quote}”
-                </blockquote>
-                <figcaption className="mt-auto border-t pt-3">
-                  <span className="block text-sm font-extrabold">{t.name}</span>
-                  <span className="text-xs text-muted-foreground">{t.context}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mx-auto max-w-6xl px-4 py-12 md:py-16" id="faq">
-        <SectionHeading
-          eyebrow="FAQ"
-          title="Pertanyaan Seputar Aki"
-          description="Pertanyaan yang paling sering diajukan pelanggan sebelum membeli aki."
-        />
-        <div className="mt-6">
-          <FaqSection items={faqs} />
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="bg-brand-dark text-white">
-        <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-4 py-14 md:items-center md:py-16 md:text-center">
-          <Badge className="bg-brand-yellow px-2.5 py-1 text-[11px] font-extrabold tracking-wide text-foreground uppercase">
-            Cek dulu, baru ganti
-          </Badge>
-          <h2 className="max-w-2xl text-2xl font-extrabold tracking-tight text-balance md:text-3xl">
-            Butuh Aki Sekarang?
-          </h2>
-          <p className="max-w-xl text-sm leading-relaxed text-white/70 md:text-base">
-            Jangan tunggu sampai mobil tidak bisa starter. Cari aki yang
-            sesuai sekarang atau tanyakan langsung tipe aki kendaraan Anda
-            kepada kami.
-          </p>
-          <div className="flex w-full flex-col gap-2.5 sm:w-auto sm:flex-row">
-            <Button asChild size="lg" variant="secondary" className="w-full bg-white text-foreground hover:bg-white/85 sm:w-auto">
-              <Link href="/produk">Cari Produk</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              className="w-full bg-[#15803D] text-white hover:bg-[#15803D]/85 sm:w-auto"
-            >
-              <a
-                href={waLink(waGeneralMessage())}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <WhatsAppIcon />
-                Chat WhatsApp
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <section className="bg-brand-dark py-16 text-white md:py-20" id="cari-aki"><div className="mx-auto max-w-6xl px-4"><div className="max-w-2xl"><p className="text-xs font-black tracking-[0.18em] text-brand-yellow uppercase">Pilih dengan tepat</p><h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">Cari aki yang cocok untuk kendaraan Anda</h2><p className="mt-4 text-sm leading-relaxed text-white/70 md:text-base">Pilih jenis kendaraan dan mereknya. Jika belum yakin, tim kami siap membantu lewat WhatsApp.</p></div><div className="mt-8"><BatteryFinder /></div></div></section>
+      <section className="mx-auto max-w-6xl px-4 py-16 md:py-20"><SectionHeading eyebrow="Kategori" title="Solusi aki untuk mobil dan motor" description="Pilih kategori kendaraan untuk melihat pilihan aki yang tersedia." /><CategoryCards /></section>
+      <ServiceSupportGrid />
+      <section className="bg-[#FAFAF8] py-16 md:py-20" id="produk"><div className="mx-auto max-w-6xl px-4"><div className="flex flex-col justify-between gap-4 md:flex-row md:items-end"><SectionHeading eyebrow="Produk" title="Aki yang tersedia" description="Pilihan produk dan harga bersumber dari katalog. Gunakan gambar aktual sebagai referensi produk." /><Button asChild variant="outline" className="w-fit border-brand-dark/15 text-brand-dark hover:bg-brand-dark hover:text-white"><Link href="/produk">Lihat Semua Produk <ArrowRightIcon /></Link></Button></div><div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{showcaseProducts.map((product) => <ProductShowcaseCard key={product.id} product={product} />)}</div></div></section>
+      <section className="bg-[#F1F2EF] py-16 md:py-20"><div className="mx-auto max-w-6xl px-4"><SectionHeading eyebrow="Cara kerja" title="Aki bermasalah? Beres dalam 3 langkah" description="Proses singkat untuk kondisi kendaraan yang butuh penanganan segera." /><div className="mt-8 grid gap-4 md:grid-cols-3">{steps.map((step) => <div key={step.number} className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-brand-dark/5"><p className="text-4xl font-black text-brand-red">{step.number}</p><h3 className="mt-5 text-lg font-black">{step.title}</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.description}</p></div>)}</div></div></section>
+      <JakartaCoverage />
+      <section className="bg-[#FAFAF8] py-16 md:py-20" id="dokumentasi"><div className="mx-auto max-w-6xl px-4"><div className="flex flex-col justify-between gap-4 md:flex-row md:items-end"><SectionHeading eyebrow="Dokumentasi" title="Galeri layanan aki" description="Bukti pemasangan pelanggan dan dokumentasi aktivitas teknisi di lapangan." /><a href={referenceSourceUrl} target="_blank" rel="noopener noreferrer" className="w-fit text-sm font-black text-brand-red hover:underline">Lihat sumber asli <ArrowRightIcon className="inline size-4" /></a></div><GalleryGrid /></div></section>
+      <Testimonials />
+      <section className="bg-white py-16 md:py-20"><div className="mx-auto max-w-6xl px-4"><SectionHeading eyebrow="Kepercayaan" title="Kenapa pelanggan memilih kami" description="Informasi layanan yang penting saat Anda membutuhkan aki dengan cepat." /><div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{trustItems.map(({ label, icon: Icon }) => <div key={label} className="rounded-lg bg-[#FAFAF8] p-5 shadow-sm ring-1 ring-brand-dark/5"><div className="flex size-10 items-center justify-center rounded-lg bg-brand-red/10 text-brand-red"><Icon className="size-5" aria-hidden="true" /></div><h3 className="mt-5 text-base font-black">{label}</h3></div>)}</div></div></section>
+      <section className="mx-auto max-w-6xl px-4 py-16 md:py-20" id="faq"><SectionHeading eyebrow="Pertanyaan umum" title="Sebelum memanggil teknisi" description="Jawaban singkat untuk pertanyaan yang paling sering ditanyakan pelanggan." /><div className="mx-auto mt-8 max-w-3xl"><FaqSection items={faqs.slice(0, 6)} /></div></section>
+      <section className="bg-brand-red py-16 text-white md:py-20"><div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between"><div><Badge className="bg-brand-yellow px-2.5 py-1 text-[11px] font-black tracking-wide text-brand-dark uppercase">Bantuan darurat aki · Jakarta</Badge><h2 className="mt-4 max-w-2xl text-3xl font-black tracking-tight md:text-5xl">AKI BERMASALAH DI JAKARTA?</h2><p className="mt-4 max-w-xl text-sm leading-relaxed text-white/80">Jangan tunggu mobil benar-benar tidak bisa digunakan. Hubungi teknisi kami sekarang.</p></div><div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row"><Button asChild size="lg" className="bg-brand-yellow text-brand-dark hover:bg-brand-yellow/90"><a href={waLink(waGeneralMessage())} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> Chat Teknisi Sekarang</a></Button><Button asChild size="lg" variant="outline" className="border-white/40 bg-transparent text-white hover:bg-white hover:text-brand-red"><a href={"tel:" + business.phoneIntl}><PhoneIcon /> Telepon</a></Button></div></div></section>
     </>
   );
+}
+
+function ProductShowcaseCard({ product }: { product: Product }) {
+  const media = getProductReferenceImage(product.brandSlug, product.vehicleType);
+  return <Card className="group flex h-full flex-col overflow-hidden bg-white shadow-sm shadow-brand-dark/5"><div className="relative aspect-[4/3] overflow-hidden bg-white">{media ? <Image src={media.src} alt={media.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-contain p-4 transition-transform duration-300 group-hover:scale-105" /> : null}</div><CardContent className="flex flex-1 flex-col p-5"><p className="text-[10px] font-black tracking-[0.16em] text-brand-red uppercase">{product.vehicleType === "mobil" ? "Aki Mobil" : "Aki Motor"}</p><h3 className="mt-2 text-lg font-black">{product.name}</h3><p className="mt-2 text-xs leading-relaxed text-muted-foreground">{product.shortDescription}</p><div className="mt-auto pt-5"><p className="text-lg font-black">{formatIDR(product.price)}</p><Button asChild size="sm" className="mt-3 w-full bg-brand-red text-white hover:bg-brand-red/90"><a href={waLink(waProductMessage(product))} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> Tanya &amp; Pesan</a></Button></div></CardContent></Card>;
 }

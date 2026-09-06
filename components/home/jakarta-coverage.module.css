@@ -1,0 +1,37 @@
+.track,
+.brandTrack {
+  will-change: transform;
+}
+
+.track {
+  animation: jakarta-coverage-marquee 28s linear infinite;
+}
+
+.brandTrack {
+  animation: brand-marquee 34s linear infinite;
+}
+
+.track:hover,
+.track:focus-within,
+.brandTrack:hover,
+.brandTrack:focus-within {
+  animation-play-state: paused;
+}
+
+@keyframes jakarta-coverage-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes brand-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track,
+  .brandTrack {
+    animation: none;
+    transform: translateX(0);
+  }
+}

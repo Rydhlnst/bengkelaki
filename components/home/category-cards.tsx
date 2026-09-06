@@ -1,29 +1,30 @@
 import Link from "next/link";
 import { ArrowUpRightIcon, BikeIcon, CarIcon } from "@/lib/icons";
 import { Card, CardContent } from "@/components/ui/card";
-import { BatteryArt } from "@/components/site/battery-art";
-import { getProduct } from "@/data/products";
 
 const categories = [
-  { title: "Aki Mobil", caption: "Siap untuk perjalanan berikutnya.", description: "City car, MPV, SUV, hingga kendaraan niaga.", href: "/aki-mobil", product: "gs-astra-ns40zl", Icon: CarIcon },
-  { title: "Aki Motor", caption: "Starter ringan. Aktivitas lancar.", description: "Motor matic, bebek, dan sport harian Anda.", href: "/aki-motor", product: "yuasa-ytx5l-bs", Icon: BikeIcon },
+  { title: "Aki Mobil", caption: "Untuk city car, MPV, SUV, dan kendaraan niaga.", href: "/aki-mobil", Icon: CarIcon, code: "12V" },
+  { title: "Aki Motor", caption: "Untuk motor matic, bebek, sport, dan harian.", href: "/aki-motor", Icon: BikeIcon, code: "MF" },
 ];
 
 export function CategoryCards() {
   return (
-    <div className="mt-8 grid gap-5 md:grid-cols-2">
-      {categories.map(({ title, caption, description, href, product, Icon }) => (
-        <Card key={href} className="group relative rounded-2xl border bg-background py-0 shadow-none transition-shadow hover:shadow-lg">
-          <Link href={href} className="block rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
-            <CardContent className="grid grid-cols-[1.1fr_1fr] items-center gap-0 p-5 sm:p-7">
-              <div className="relative z-10">
-                <span className="mb-5 grid size-11 place-items-center rounded-xl border bg-muted text-primary"><Icon className="size-5"/></span>
-                <h3 className="text-2xl font-extrabold tracking-tight">{title}</h3>
-                <p className="mt-2 text-sm font-semibold">{caption}</p>
-                <p className="mt-2 text-xs leading-5 text-muted-foreground">{description}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-primary">Jelajahi pilihan <ArrowUpRightIcon className="size-4"/></span>
+    <div className="mt-6 grid gap-3 sm:mt-8 sm:gap-4 md:grid-cols-2">
+      {categories.map(({ title, caption, href, Icon, code }) => (
+        <Card key={href} className="group overflow-hidden bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+          <Link href={href}>
+            <CardContent className="flex items-center justify-between gap-3 p-5 sm:gap-5 sm:p-8">
+              <div>
+                <div className="flex size-10 items-center justify-center rounded-lg bg-brand-red text-white transition-transform group-hover:scale-105 sm:size-11 sm:rounded-xl">
+                  <Icon className="size-5" />
+                </div>
+                <h3 className="mt-5 text-xl font-black tracking-tight sm:mt-6 sm:text-2xl">{title}</h3>
+                <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">{caption}</p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-black text-brand-red sm:mt-5">
+                  Lihat pilihan <ArrowUpRightIcon className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
               </div>
-              <BatteryArt product={getProduct(product)!} className="origin-center scale-110 motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-115"/>
+              <span className="text-5xl font-black tracking-[-0.08em] text-brand-yellow sm:text-8xl">{code}</span>
             </CardContent>
           </Link>
         </Card>

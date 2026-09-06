@@ -1,0 +1,10 @@
+import Image from "next/image";
+import { ArrowRightIcon, WhatsAppIcon } from "@/lib/icons";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/site/section-heading";
+import { serviceSupportItems } from "@/data/service-support";
+import { waGeneralMessage, waLink } from "@/lib/whatsapp";
+
+export function ServiceSupportGrid() {
+  return <section id="layanan" className="bg-[#FAFAF8] py-12 md:py-20"><div className="mx-auto max-w-6xl px-4"><SectionHeading eyebrow="Bantuan aki Jakarta" title="Kendaraan mogok? Mulai dari sini." description="Pilih bantuan yang Anda perlukan. Jika tidak yakin, kirim tipe kendaraan dan lokasi lewat WhatsApp—kami bantu arahkan." /><div className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">{serviceSupportItems.map((service, index) => <article key={service.slug} className={index === 0 ? "flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-brand-dark/10 transition-shadow hover:shadow-lg hover:shadow-brand-dark/10 lg:col-span-2" : "flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-brand-dark/10 transition-shadow hover:shadow-lg hover:shadow-brand-dark/10"}><div className="relative aspect-[3/2] overflow-hidden bg-white sm:aspect-[16/9]"><Image src={service.image} alt={service.imageAlt} fill sizes={index === 0 ? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 66vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"} className="object-cover transition-transform duration-300 hover:scale-105" /></div><div className="flex flex-1 flex-col p-4 sm:p-6"><h3 className="text-lg font-black tracking-tight text-brand-dark sm:text-xl">{service.title}</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:mt-3">{service.description}</p><Button asChild variant="link" className="mt-auto h-auto w-fit px-0 pt-5 text-sm font-black text-brand-red hover:text-brand-red/80 sm:pt-6"><a href={waLink(waGeneralMessage())} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> Minta bantuan sekarang <ArrowRightIcon /></a></Button></div></article>)}</div></div></section>;
+}
