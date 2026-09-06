@@ -10,19 +10,7 @@ export function waGeneralMessage(): string {
 }
 
 export function waProductMessage(product: Product): string {
-  return `Halo ${business.name}, saya melihat produk:
-
-${product.name}
-${product.voltage} • ${product.capacity}
-
-di website.
-
-Kendaraan saya:
-Merek:
-Tipe:
-Tahun:
-
-Apakah aki ini cocok dan stoknya tersedia?`;
+  return `Halo ${business.name}, saya tertarik dengan ${product.name}.\n\nKendaraan saya:\nMerek:\nTipe:\nTahun:\n\nMohon dibantu cek kecocokan, stok, dan pemasangannya.`;
 }
 
 export function waFinderMessage(input: {

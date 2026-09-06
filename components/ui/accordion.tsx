@@ -19,7 +19,7 @@ function AccordionTrigger({ className, children, ...props }: React.ComponentProp
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "group/accordion-trigger relative flex flex-1 items-start justify-between gap-6 rounded-xl bg-white px-4 py-4 text-left text-sm font-semibold shadow-sm ring-1 ring-foreground/5 transition-all outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring/30 disabled:pointer-events-none disabled:opacity-50 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-3.5 **:data-[slot=accordion-trigger-icon]:text-muted-foreground",
+          "group/accordion-trigger relative flex flex-1 items-center justify-between gap-3 rounded-xl bg-white px-4 py-3.5 text-left text-sm font-semibold shadow-sm ring-1 ring-foreground/5 transition-all outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring/30 disabled:pointer-events-none disabled:opacity-50 sm:gap-6 sm:py-4 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-3.5 **:data-[slot=accordion-trigger-icon]:text-muted-foreground",
           className
         )}
         {...props}
