@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(business.siteUrl),
   title: { default: `Jasa Aki 24 Jam Jakarta | ${business.name}`, template: `%s | ${business.name}` },
   description: "Jasa aki 24 jam Jakarta. Teknisi datang ke lokasi untuk cek, ganti, jumper, dan pasang aki mobil maupun motor.",
-  keywords: ["aki Jakarta", "bengkel aki Jakarta", "aki mobil Jakarta", "jasa aki Jakarta", "aki 24 jam Jakarta", "ganti aki Jakarta", "antar aki Jakarta", "pasang aki Jakarta", "teknisi aki Jakarta"],
+  keywords: ["aki darurat Jakarta", "aki express Jakarta", "teknisi aki panggilan 24 jam", "ganti aki di lokasi Jakarta", "jumper aki Jakarta", "cas aki Jakarta", "bantuan aki mobil mogok", "bantuan aki motor mogok", "pasang aki di lokasi"],
   robots: { index: true, follow: true },
   openGraph: { siteName: business.name, locale: "id_ID", type: "website", title: `${business.name} — Jasa Aki 24 Jam Jakarta`, description: business.shortDescription },
   twitter: { card: "summary_large_image" },

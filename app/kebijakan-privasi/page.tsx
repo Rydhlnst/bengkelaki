@@ -26,7 +26,7 @@ export default function KebijakanPrivasiPage() {
             Ringkasannya
           </h2>
           <p className="mt-2">
-            Website ini adalah katalog produk dan halaman informasi dari{" "}
+            Website ini adalah referensi tipe aki dan halaman informasi layanan dari{" "}
             {business.name}. Kami tidak meminta Anda membuat akun, tidak
             menjalankan keranjang belanja, dan tidak menerima pembayaran
             melalui website ini. Komunikasi terjadi langsung melalui WhatsApp,
@@ -43,7 +43,7 @@ export default function KebijakanPrivasiPage() {
             sampai kepada kami adalah data kontak yang Anda kirimkan sendiri
             (nama dan nomor WhatsApp/telepon) beserta isi percakapan. Data ini
             kami gunakan hanya untuk menjawab pertanyaan Anda dan keperluan
-            transaksi di toko.
+            komunikasi layanan.
           </p>
         </section>
 
@@ -78,7 +78,7 @@ export default function KebijakanPrivasiPage() {
           <p className="mt-2">
             Percakapan WhatsApp disimpan di perangkat komunikasi kami selama
             masih diperlukan untuk melayani Anda, termasuk keperluan garansi
-            produk yang pernah Anda beli.
+            layanan yang pernah Anda gunakan.
           </p>
         </section>
 

@@ -15,7 +15,6 @@ import { productFaqs } from "@/data/faqs";
 import { getProductReferenceImage } from "@/data/reference-media";
 import { batteryTypeLabels, getProduct, getRelatedProducts, products, type Product } from "@/data/products";
 import { getBrand } from "@/data/brands";
-import { formatIDR } from "@/lib/format";
 import { buildMetadata } from "@/lib/seo";
 import { waLink, waProductMessage } from "@/lib/whatsapp";
 
@@ -57,20 +56,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     sku: product.sku,
     brand: { "@type": "Brand", name: brand?.name ?? product.brandSlug },
     additionalProperty: specs.slice(1, 5).map(([name, value]) => ({ "@type": "PropertyValue", name, value })),
-    offers: {
-      "@type": "Offer",
-      url: business.siteUrl + "/produk/" + product.slug,
-      priceCurrency: "IDR",
-      price: product.price,
-      availability: product.stock === "tersedia" ? "https://schema.org/InStock" : "https://schema.org/LimitedAvailability",
-      seller: { "@type": "Organization", name: business.name },
-      areaServed: business.city,
-    },
   };
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 md:py-10">
-      <Breadcrumbs items={[{ label: "Katalog Produk", href: "/produk" }, { label: product.name }]} />
+      <Breadcrumbs items={[{ label: "Referensi Tipe Aki", href: "/produk" }, { label: product.name }]} />
       <div className="mt-6 grid gap-8 lg:grid-cols-2">
         <div className="flex flex-col gap-4">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border bg-white shadow-sm">
@@ -82,11 +72,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         <div className="flex flex-col gap-5">
           <div><Link href={"/merek/" + product.brandSlug} className="text-xs font-black tracking-[0.16em] text-primary uppercase hover:underline">{brand?.name ?? product.brandSlug}</Link><h1 className="mt-2 text-3xl font-black tracking-tight">{product.name}</h1><p className="mt-2 text-sm font-bold text-muted-foreground">Aki {product.vehicleType === "mobil" ? "Mobil" : "Motor"} · {product.voltage} · {product.capacity}</p></div>
-          <div className="flex flex-wrap items-end justify-between gap-3"><div><span className="block text-[10px] font-bold tracking-wider text-muted-foreground uppercase">Harga</span><span className="text-3xl font-black">{formatIDR(product.price)}</span></div><Badge className={cnStock(product.stock)}>{product.stock === "tersedia" ? "Ready Stok" : "Stok Terbatas — Tanya Dulu"}</Badge></div>
+          <div className="flex flex-wrap items-center justify-between gap-3"><span className="text-sm font-semibold text-muted-foreground">Siap dicek dan dipasang teknisi express</span><Badge className={cnStock(product.stock)}>{product.stock === "tersedia" ? "Siap Ditangani" : "Konfirmasi Dulu"}</Badge></div>
           <p className="text-sm leading-relaxed text-muted-foreground">{product.shortDescription}</p>
           <dl className="grid grid-cols-2 gap-4 rounded-xl border bg-white p-4 text-sm">{specs.slice(0, 4).map(([label, value]) => <div key={label}><dt className="text-xs text-muted-foreground">{label}</dt><dd className="font-black">{value}</dd></div>)}</dl>
-          <div className="flex flex-col gap-2.5 sm:flex-row"><Button asChild size="lg" className="flex-1"><a href={waLink(waProductMessage(product))} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> Pesan via WhatsApp</a></Button><Button asChild size="lg" variant="outline"><a href={"tel:" + business.phoneIntl}><PhoneIcon /> Telepon</a></Button></div>
-          <div className="flex items-start gap-2.5 rounded-xl border border-brand-yellow bg-brand-yellow/20 p-3.5 text-xs leading-relaxed"><CircleHelpIcon className="mt-0.5 size-4 shrink-0 text-brand-red" /><p>Belum yakin tipe ini cocok? Kirim merek, tipe, dan tahun kendaraan lewat WhatsApp — kami bantu pastikan sebelum Anda membeli.</p></div>
+          <div className="flex flex-col gap-2.5 sm:flex-row"><Button asChild size="lg" className="flex-1"><a href={waLink(waProductMessage(product))} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> Tanya Teknisi via WhatsApp</a></Button><Button asChild size="lg" variant="outline"><a href={"tel:" + business.phoneIntl}><PhoneIcon /> Telepon</a></Button></div>
+          <div className="flex items-start gap-2.5 rounded-xl border border-brand-yellow bg-brand-yellow/20 p-3.5 text-xs leading-relaxed"><CircleHelpIcon className="mt-0.5 size-4 shrink-0 text-brand-red" /><p>Belum yakin tipe ini cocok? Kirim merek, tipe, tahun kendaraan, dan lokasi lewat WhatsApp — kami bantu pastikan sebelum penggantian.</p></div>
         </div>
       </div>
 
@@ -97,9 +87,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <section><h2 className="text-xl font-black tracking-tight">Cocok untuk kendaraan apa?</h2><p className="mt-2 text-sm leading-relaxed text-muted-foreground">Daftar di bawah adalah contoh kendaraan yang umumnya memakai tipe ini. Model dan tahun produksi bisa berbeda — tetap cocokkan dengan aki yang terpasang.</p><ul className="mt-3 flex flex-wrap gap-2">{product.compatibleVehicles.map((vehicle) => <li key={vehicle} className="rounded-full border bg-white px-3 py-1.5 text-xs font-bold">{vehicle}</li>)}</ul></section>
           <section><h2 className="text-xl font-black tracking-tight">Pertanyaan seputar produk</h2><div className="mt-2"><FaqSection items={faqs} /></div></section>
         </div>
-        <aside className="flex flex-col gap-8"><section className="rounded-2xl border bg-white p-5"><h2 className="font-heading text-base font-black tracking-wide uppercase">Keunggulan</h2><ul className="mt-3 flex flex-col gap-2.5 text-sm">{product.highlights.map((highlight) => <li key={highlight} className="flex items-start gap-2"><span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" /><span className="text-muted-foreground">{highlight}</span></li>)}</ul></section><section className="rounded-2xl border p-5"><h2 className="font-heading text-base font-black tracking-wide uppercase">Cara memastikan aki cocok</h2><ol className="mt-3 flex list-decimal flex-col gap-2.5 pl-4 text-sm leading-relaxed text-muted-foreground"><li>Lihat tipe yang tercetak di label aki lama.</li><li>Cocokkan tegangan, kapasitas, dan posisi terminal.</li><li>Jika ragu, kirim tipe kendaraan lewat WhatsApp.</li></ol><Button asChild className="mt-4 w-full"><a href={waLink(waProductMessage(product))} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> Tanya Stok &amp; Kecocokan</a></Button></section></aside>
+        <aside className="flex flex-col gap-8"><section className="rounded-2xl border bg-white p-5"><h2 className="font-heading text-base font-black tracking-wide uppercase">Keunggulan</h2><ul className="mt-3 flex flex-col gap-2.5 text-sm">{product.highlights.map((highlight) => <li key={highlight} className="flex items-start gap-2"><span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" /><span className="text-muted-foreground">{highlight}</span></li>)}</ul></section><section className="rounded-2xl border p-5"><h2 className="font-heading text-base font-black tracking-wide uppercase">Cara memastikan aki cocok</h2><ol className="mt-3 flex list-decimal flex-col gap-2.5 pl-4 text-sm leading-relaxed text-muted-foreground"><li>Lihat tipe yang tercetak di label aki lama.</li><li>Cocokkan tegangan, kapasitas, dan posisi terminal.</li><li>Jika ragu, kirim tipe kendaraan lewat WhatsApp.</li></ol><Button asChild className="mt-4 w-full"><a href={waLink(waProductMessage(product))} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> Tanya Kecocokan &amp; Pemasangan</a></Button></section></aside>
       </div>
-      <section className="mt-14"><SectionHeading eyebrow="Produk lain" title="Aki lain yang sering dibandingkan" /><div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{related.map((item) => <ProductCard key={item.id} product={item} />)}</div></section>
+      <section className="mt-14"><SectionHeading eyebrow="Tipe aki lain" title="Aki lain yang sering dibandingkan" /><div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{related.map((item) => <ProductCard key={item.id} product={item} />)}</div></section>
       <JsonLd data={productJsonLd} />
     </div>
   );

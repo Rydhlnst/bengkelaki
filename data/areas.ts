@@ -6,7 +6,7 @@ export type Area = {
   travelNote: string;
 };
 
-// Jakarta catalog coverage. Confirm workshop location and service availability before visiting.
+// Area layanan aki darurat Jakarta. Konfirmasi jangkauan teknisi sebelum berangkat.
 export const areas: Area[] = [
   ["jakarta-selatan", "Jakarta Selatan"],
   ["jakarta-pusat", "Jakarta Pusat"],
@@ -17,7 +17,7 @@ export const areas: Area[] = [
   slug,
   name,
   city: "Jakarta",
-  description: `Cari aki mobil atau motor untuk kendaraan Anda di ${name}. Bandingkan tipe dan harga di katalog, lalu konsultasikan kecocokan dan stok melalui WhatsApp.`,
+  description: `Butuh bantuan aki darurat di ${name}? Teknisi AkiExpress24jam siap membantu cek, jumper, ganti, dan pasang aki mobil atau motor melalui WhatsApp.`,
   travelNote: "Hubungi kami untuk memastikan alamat bengkel, jam buka, dan ketersediaan layanan sebelum berkunjung.",
 }));
 

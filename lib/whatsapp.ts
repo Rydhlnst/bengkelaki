@@ -10,7 +10,7 @@ export function waGeneralMessage(): string {
 }
 
 export function waProductMessage(product: Product): string {
-  return `Halo ${business.name}, saya tertarik dengan ${product.name}.\n\nKendaraan saya:\nMerek:\nTipe:\nTahun:\n\nMohon dibantu cek kecocokan, stok, dan pemasangannya.`;
+  return `Halo ${business.name}, saya tertarik dengan ${product.name}.\n\nKendaraan saya:\nMerek:\nTipe:\nTahun:\n\nMohon dibantu cek kecocokan, ketersediaan, dan pemasangannya.`;
 }
 
 export function waFinderMessage(input: {
@@ -24,17 +24,17 @@ Jenis kendaraan: ${input.vehicleType ?? "-"}
 Merek: ${input.vehicleBrand ?? "-"}
 Tipe/Model: ${input.model ?? "-"}
 
-Mohon dibantu rekomendasi aki yang cocok beserta harganya.`;
+Mohon dibantu menentukan tindakan dan aki yang sesuai untuk kondisi kendaraan saya.`;
 }
 
 export function waStockCheckMessage(productName: string): string {
-  return `Halo ${business.name}, apakah ${productName} masih tersedia? Kalau iya, boleh tahu harga terbarunya?`;
+  return `Halo ${business.name}, saya membutuhkan bantuan untuk ${productName}. Apakah tipe ini tersedia dan bisa dipasang oleh teknisi?`;
 }
 
 export function waBrandMessage(brandName: string): string {
-  return `Halo ${business.name}, saya mencari aki ${brandName} untuk kendaraan saya.\n\nKendaraan saya:\nMerek:\nTipe:\nTahun:\n\nMohon info tipe yang cocok dan harganya.`;
+  return `Halo ${business.name}, saya mencari aki ${brandName} untuk kendaraan saya.\n\nKendaraan saya:\nMerek:\nTipe:\nTahun:\n\nMohon dibantu menentukan tipe yang cocok dan layanan pemasangannya.`;
 }
 
 export function waAreaMessage(areaName: string): string {
-  return `Halo ${business.name}, saya dari ${areaName} dan sedang mencari aki.\n\nKendaraan saya:\nJenis: Mobil / Motor\nMerek:\nTipe:\nTahun:\n\nApakah ada stok yang cocok?`;
+  return `Halo ${business.name}, saya dari ${areaName} dan membutuhkan bantuan aki darurat.\n\nKendaraan saya:\nJenis: Mobil / Motor\nMerek:\nTipe:\nTahun:\n\nApakah teknisi bisa membantu cek dan pasang aki di lokasi saya?`;
 }

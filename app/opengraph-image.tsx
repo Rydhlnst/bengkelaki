@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { business } from "@/config/business";
 
-export const alt = `${business.name} — Toko & Bengkel Aki Mobil Motor di ${business.city}`;
+export const alt = `${business.name} — Aki Darurat & Teknisi Express Jakarta`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -62,7 +62,7 @@ export default function OpengraphImage() {
             Aki Mobil &amp; Motor Lengkap. Bisa Langsung Pasang.
           </div>
           <div style={{ display: "flex", fontSize: 34, color: "#9CA3AF" }}>
-            Toko &amp; Bengkel Aki di {business.city} — tanya stok via WhatsApp
+            Aki darurat, jumper, ganti, dan pasang di lokasi — 24 jam
           </div>
         </div>
 

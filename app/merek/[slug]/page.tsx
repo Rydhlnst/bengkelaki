@@ -26,8 +26,8 @@ export async function generateMetadata({
   const brand = getBrand(slug);
   if (!brand) return {};
   return buildMetadata({
-    title: `Aki ${brand.name} ${business.city} — Harga & Pilihan Tipe`,
-    description: `Pilihan aki ${brand.name} untuk mobil dan motor di ${business.city}. Lihat tipe yang tersedia beserta harganya, tanya stok langsung via WhatsApp.`,
+    title: `Layanan Aki ${brand.name} ${business.city} — Teknisi Express`,
+    description: `Bantuan teknisi untuk aki ${brand.name} mobil dan motor di ${business.city}. Cek kecocokan tipe, ketersediaan, dan layanan pemasangan melalui WhatsApp.`,
     path: `/merek/${brand.slug}`,
   });
 }
@@ -123,9 +123,9 @@ export default async function BrandPage({
 
         <div className="mt-12">
           <SectionHeading
-            eyebrow="Katalog"
-            title={`Tipe Aki ${brand.name} yang Tersedia`}
-            description={`${list.length} tipe tersedia di toko kami. Stok bisa berubah sepanjang hari — konfirmasi dulu via WhatsApp sebelum datang.`}
+            eyebrow="Referensi Tipe"
+            title={`Referensi Tipe Aki ${brand.name}`}
+            description={`${list.length} tipe aki ${brand.name} tersedia sebagai referensi. Konfirmasi kecocokan dan bantuan pemasangan melalui WhatsApp sebelum teknisi datang.`}
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {list.map((p) => (

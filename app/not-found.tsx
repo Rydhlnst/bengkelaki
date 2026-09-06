@@ -13,7 +13,7 @@ export default function NotFound() {
       </h1>
       <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
         Halaman yang Anda cari tidak ada atau sudah dipindahkan. Coba cari aki
-        dari katalog, atau tanyakan langsung ke kami.
+        dari layanan aki darurat, atau hubungi teknisi kami langsung.
       </p>
       <div className="flex w-full flex-col gap-2.5 sm:w-auto sm:flex-row">
         <Button asChild size="lg" className="w-full sm:w-auto">
@@ -34,7 +34,7 @@ export default function NotFound() {
         </Button>
       </div>
       <p className="text-xs text-muted-foreground">
-        {business.name} — toko &amp; bengkel aki di {business.city}
+        {business.name} — layanan aki darurat di {business.city}
       </p>
     </div>
   );

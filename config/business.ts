@@ -6,7 +6,7 @@ export const business = {
   name: "AkiExpress24jam",
   tagline: "Jasa Aki 24 Jam Jakarta",
   shortDescription:
-    "Solusi cepat kebutuhan aki kendaraan dengan teknisi profesional yang siap datang langsung ke lokasi Anda di Jakarta. Cek, ganti, jumper, dan pasang aki 24 jam.",
+    "Layanan aki darurat 24 jam di Jakarta dengan teknisi express yang datang ke lokasi untuk cek, jumper, ganti, dan pasang aki mobil maupun motor.",
   city: "Jakarta",
   province: "DKI Jakarta",
   address: "Jl. Sinar Budi Raya, Penjagalan, Jakarta Utara",
@@ -33,7 +33,7 @@ export const business = {
     "MOTOBATT", "YUASA", "DRYFULL", "LAKONI", "CHILWEE", "MF"
   ],
   services: [
-    { title: "Jual Beli Aki", description: "Menyediakan berbagai pilihan aki berkualitas untuk mobil, motor, dan kendaraan listrik dari merek terpercaya.", icon: "battery" },
+    { title: "Jual Tukar Tambah Aki", description: "Teknisi membantu menyiapkan aki yang sesuai untuk mobil, motor, dan kendaraan listrik saat kondisi darurat.", icon: "battery" },
     { title: "Jumper Aki", description: "Layanan jumper aki siap membantu kendaraan yang mogok akibat aki soak atau kehilangan daya ke lokasi Anda.", icon: "zap" },
     { title: "Cas Aki", description: "Jasa cas aki untuk membantu mengembalikan performa aki kendaraan agar dapat digunakan kembali secara optimal.", icon: "battery-charging" },
     { title: "Aki Mobil", description: "Tersedia berbagai jenis aki mobil berkualitas yang cocok untuk berbagai tipe kendaraan.", icon: "car" },
@@ -49,8 +49,8 @@ export const business = {
   testimonials: [
     { name: "Raka Julian", text: "Mobil saya tiba-tiba gak bisa starter pas pagi mau berangkat kerja. Untung nemu AkiExpress24jam dan teknisinya cepet banget datang ke rumah. Pelayanannya ramah dan proses ganti akinya juga cepat.", rating: 5 },
     { name: "Nadia Keisha", text: "Awalnya ragu pesan aki panggilan tapi ternyata pelayanannya oke banget. Admin responsif terus teknisinya jelas pas kasih penjelasan kondisi aki motor saya. Recommended sih.", rating: 5 },
-    { name: "Farel Nathan", text: "Pernah pake layanan jumper aki malam hari di Jakarta Timur dan responnya cepet. Gak nyangka masih bisa dilayani malam-malam. Harganya juga masih masuk akal.", rating: 5 },
-    { name: "Aurel Vanessa", text: "Saya beli aki mobil DELKOR di AkiExpress24jam dan sampai sekarang performanya bagus banget. Teknisi datang langsung pasang ke lokasi jadi praktis gak perlu keluar rumah.", rating: 5 },
+    { name: "Farel Nathan", text: "Pernah pakai layanan jumper aki malam hari di Jakarta Timur dan responsnya cepat. Teknisi datang, cek kondisi aki, lalu membantu kendaraan kembali jalan.", rating: 5 },
+    { name: "Aurel Vanessa", text: "Mobil saya drop dan teknisi AkiExpress24jam datang langsung memasang aki di lokasi. Praktis, cepat, dan tidak perlu keluar rumah.", rating: 5 },
     { name: "Kevin Alvaro", text: "Pelayanan cas aki di AkiExpress24jam memuaskan sih. Orangnya santai tapi kerja tetap profesional. Dijelasin juga kondisi aki kendaraan saya jadi lebih ngerti kapan harus ganti aki baru.", rating: 5 },
   ],
   serviceAreas: [

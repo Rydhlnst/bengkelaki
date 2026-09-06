@@ -15,25 +15,25 @@ export type Service = {
 // Aktifkan "antar-pasang" hanya jika layanan benar-benar tersedia (lihat config/business.ts).
 export const services: Service[] = [
   {
-    slug: "jual-aki-mobil",
-    name: "Jual Aki Mobil",
+    slug: "ganti-aki-mobil-darurat",
+    name: "Ganti Aki Mobil Darurat",
     icon: "ganti-mobil",
     shortDescription:
-      "Pilihan aki mobil berbagai merek dan tipe, dari city car sampai SUV dan kendaraan niaga.",
+      "Penggantian aki mobil di lokasi untuk kondisi kendaraan yang tidak bisa starter.",
     description: [
-      "Tersedia aki mobil basah dan MF (maintenance free) untuk berbagai jenis kendaraan, mulai dari city car, MPV, SUV, sampai pickup dan kendaraan niaga.",
-      "Cek katalog di website, lalu tanyakan stok dan harga terbaru melalui WhatsApp sebelum datang.",
+      "Teknisi mengecek tipe aki mobil yang sesuai untuk city car, MPV, SUV, pickup, dan kendaraan niaga.",
+      "Kirim lokasi dan tipe kendaraan melalui WhatsApp agar teknisi dapat menyiapkan bantuan dengan cepat.",
     ],
   },
   {
-    slug: "jual-aki-motor",
-    name: "Jual Aki Motor",
+    slug: "ganti-aki-motor-darurat",
+    name: "Ganti Aki Motor Darurat",
     icon: "ganti-motor",
     shortDescription:
-      "Aki MF untuk motor matic, sport, dan motor harian berbagai merek.",
+      "Penggantian aki motor di lokasi untuk motor matic, sport, dan motor harian.",
     description: [
-      "Aki motor yang tersedia umumnya berbentuk MF (maintenance free) untuk motor matic 110-160cc serta motor sport dan naked bike.",
-      "Bawa motor Anda ke bengkel, kami cek tipe aki yang sesuai dan langsung pasang bila diperlukan.",
+      "Teknisi mengecek tipe MF yang sesuai untuk motor matic 110-160cc, motor sport, dan naked bike.",
+      "Kirim lokasi Anda, kami cek tipe aki yang sesuai dan membantu pemasangan bila diperlukan.",
     ],
   },
   {
@@ -52,7 +52,7 @@ export const services: Service[] = [
     name: "Cek Kondisi Aki",
     icon: "cek-aki",
     shortDescription:
-      "Mobil susah starter? Kami cek dulu kondisi aki Anda sebelum Anda membeli aki baru.",
+      "Mobil susah starter? Kami cek dulu kondisi aki sebelum menentukan apakah perlu penggantian.",
     description: [
       "Pemeriksaan meliputi kondisi fisik aki, sambungan terminal, dan hasil pengisian daya. Dari hasil cek ini kami akan bilang apakah aki masih bisa dipakai atau memang harus diganti.",
       "Layanan ini juga berguna sebelum mudik atau perjalanan jauh.",
@@ -76,22 +76,22 @@ export const services: Service[] = [
     shortDescription:
       "Tidak tahu tipe aki kendaraan Anda? Tanya dulu, gratis, lewat WhatsApp.",
     description: [
-      "Kirim merek, tipe, dan tahun kendaraan Anda melalui WhatsApp. Kami bantu carikan tipe aki yang sesuai, lengkap dengan estimasi harganya.",
-      "Konsultasi ini gratis dan tidak ada kewajiban untuk membeli.",
+      "Kirim merek, tipe, tahun kendaraan, dan lokasi melalui WhatsApp. Kami bantu menentukan tipe aki serta tindakan yang sesuai.",
+      "Konsultasi awal melalui WhatsApp gratis dan langsung diarahkan ke kebutuhan kendaraan Anda.",
     ],
   },
 ];
 
 export const whyChooseUs = [
   {
-    title: "Bisa Tanya Sebelum Beli",
+    title: "Bisa Konsultasi Sebelum Tindakan",
     description:
-      "Tidak yakin tipe aki kendaraan Anda? Kirim tipe kendaraan melalui WhatsApp dan kami bantu mencarikan aki yang sesuai.",
+      "Tidak yakin penyebab kendaraan sulit starter? Kirim tipe kendaraan melalui WhatsApp dan kami bantu arahkan pemeriksaan.",
   },
   {
-    title: "Harga Jelas",
+    title: "Biaya Transparan",
     description:
-      "Lihat pilihan produk dan estimasi harga di website sebelum datang ke bengkel.",
+      "Teknisi menjelaskan hasil pemeriksaan dan tindakan yang diperlukan sebelum pengerjaan.",
   },
   {
     title: "Bisa Langsung Pasang",
@@ -106,6 +106,6 @@ export const whyChooseUs = [
   {
     title: "Bengkel Lokal",
     description:
-      "Lebih mudah untuk konsultasi, pemasangan, dan layanan setelah pembelian karena bengkelnya dekat dan mudah dijangkau.",
+      "Lebih mudah untuk konsultasi, pemasangan, dan bantuan lanjutan karena tim berada di area Jakarta.",
   },
 ];

@@ -16,12 +16,12 @@ import { waGeneralMessage, waLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = buildMetadata({
   title: `Kontak & Lokasi Bengkel — ${business.name} ${business.city}`,
-  description: `Alamat, nomor telepon, jam operasional, dan peta lokasi ${business.name} di ${business.city}. Tanya stok dan harga aki langsung via WhatsApp.`,
+  description: `Alamat, nomor telepon, jam operasional, dan peta lokasi ${business.name} di ${business.city}. Hubungi teknisi aki darurat melalui WhatsApp.`,
   path: "/kontak",
 });
 
 const contactFaqs = faqs.filter((f) =>
-  ["Apakah bisa cek stok melalui WhatsApp?", "Apakah bisa konsultasi sebelum membeli?"].includes(
+  ["Apakah teknisi bisa menyiapkan tipe aki melalui WhatsApp?", "Apakah bisa konsultasi sebelum ganti aki?"].includes(
     f.question
   )
 );
@@ -31,7 +31,7 @@ export default function KontakPage() {
     {
       icon: WhatsAppIcon,
       title: "WhatsApp",
-      description: "Paling cepat dibalas. Tanya stok, harga, dan tipe aki yang cocok.",
+      description: "Paling cepat dibalas. Kirim lokasi dan tipe kendaraan untuk bantuan aki darurat.",
       action: (
         <a
           href={waLink(waGeneralMessage())}
@@ -82,8 +82,8 @@ export default function KontakPage() {
             Hubungi {business.name}
           </h1>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            Tanya stok, harga, atau tipe aki yang cocok — bisa lewat WhatsApp
-            tanpa perlu datang dulu. Kalau akinya sudah drop total, datang
+            Butuh cek, jumper, ganti, atau pasang aki — hubungi teknisi lewat WhatsApp
+            tanpa perlu datang dulu. Kalau akinya sudah drop total, kirim lokasi agar teknisi
             langsung ke bengkel kami di alamat bawah ini.
           </p>
         </div>

@@ -4,7 +4,7 @@ import { Logo } from "@/components/site/logo";
 import { business } from "@/config/business";
 import { waGeneralMessage, waLink } from "@/lib/whatsapp";
 
-const serviceLinks = [{ label: "Jual Beli Aki", href: "/layanan#jual-aki-mobil" }, { label: "Jumper Aki", href: "/#jasa-aki" }, { label: "Cas Aki", href: "/#jasa-aki" }, { label: "Aki Mobil", href: "/aki-mobil" }, { label: "Aki Motor", href: "/aki-motor" }];
+const serviceLinks = [{ label: "Jual Tukar Tambah Aki", href: "/layanan#ganti-aki-mobil-darurat" }, { label: "Jumper Aki", href: "/#jasa-aki" }, { label: "Cas Aki", href: "/#jasa-aki" }, { label: "Aki Mobil", href: "/aki-mobil" }, { label: "Aki Motor", href: "/aki-motor" }];
 const areaLinks = business.serviceAreas.map((area) => ({ label: area, href: `/area/${area.toLowerCase().replace(/\s+/g, "-")}` }));
 
 export function Footer() {

@@ -18,7 +18,7 @@ const categoryFaqs = faqs.filter((f) =>
     "Apa perbedaan aki basah dan aki kering (MF)?",
     "Bagaimana mengetahui tipe aki mobil saya?",
     "Apakah tersedia pemasangan aki?",
-    "Apakah bisa cek stok melalui WhatsApp?",
+    "Apakah teknisi bisa menyiapkan tipe aki melalui WhatsApp?",
   ].includes(f.question)
 );
 
@@ -93,9 +93,9 @@ export function VehicleCategory({
 
       <div className="mx-auto max-w-6xl px-4 py-12 md:py-14" id="daftar-aki">
         <SectionHeading
-          eyebrow="Katalog"
+          eyebrow="Referensi Tipe"
           title={vehicleType === "mobil" ? "Pilihan Aki Mobil" : "Pilihan Aki Motor"}
-          description={`${list.length} tipe tersedia. Harga dapat berubah — konfirmasi stok dan harga terbaru via WhatsApp.`}
+          description={`${list.length} tipe tersedia. Ketersediaan dapat berubah — konfirmasi kecocokan dan pemasangan express via WhatsApp.`}
         />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((p) => (

@@ -20,7 +20,7 @@ export const testimonials: Testimonial[] = [
     name: "D. — Pemilik Vario",
     context: "Ganti aki motor",
     quote:
-      "Tanya stok via WhatsApp duluan, dibalas cepat beserta harganya. Sampai di tempat aki sudah disiapkan, langsung dipasang.",
+      "Tanya bantuan via WhatsApp, dibalas cepat. Teknisi datang membawa aki yang sesuai dan langsung memasangnya di lokasi.",
   },
   {
     name: "A. — Pemilik Fortuner",
@@ -30,8 +30,8 @@ export const testimonials: Testimonial[] = [
   },
   {
     name: "S. — Pemilik Brio",
-    context: "Beli aki kering",
+    context: "Bantuan aki mobil mogok",
     quote:
-      "Dibantu pilih aki sesuai budget. Dijelaskan beda aki basah dan MF-nya dengan jelas, tidak cuma disuruh beli yang mahal.",
+      "Dibantu cek kondisi aki dan dijelaskan perbedaan aki basah serta MF dengan jelas. Tidak asal menyarankan penggantian.",
   },
 ];

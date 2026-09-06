@@ -57,7 +57,7 @@ export function JakartaCoverage() {
         <div className="mt-8 grid gap-5 rounded-lg bg-[#FAFAF8] p-4 ring-1 ring-brand-dark/10 md:mt-10 md:p-6 lg:grid-cols-[0.32fr_0.68fr] lg:items-center">
           <div>
             <p className="text-xs font-black tracking-[0.18em] text-brand-red uppercase">Merek aki tersedia</p>
-            <p className="mt-2 text-sm leading-relaxed text-brand-dark/65">Logo merek aktual yang tersedia di katalog kami.</p>
+            <p className="mt-2 text-sm leading-relaxed text-brand-dark/65">Pilihan merek aki yang dapat disiapkan teknisi.</p>
           </div>
           <div className="overflow-hidden" aria-label="Merek aki tersedia">
             <div className={`${styles.brandTrack} flex w-max`}>

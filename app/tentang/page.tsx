@@ -15,8 +15,8 @@ import { buildMetadata } from "@/lib/seo";
 import { waGeneralMessage, waLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = buildMetadata({
-  title: `Tentang ${business.name} — Toko & Bengkel Aki di ${business.city}`,
-  description: `Kenali ${business.name}, toko dan bengkel aki di ${business.city}. Lihat jam operasional, lokasi, dan alasan pelanggan membeli aki di tempat kami.`,
+  title: `Tentang ${business.name} — Layanan Aki Darurat ${business.city}`,
+  description: `Kenali ${business.name}, layanan aki darurat dan teknisi express di ${business.city}. Lihat jam operasional, lokasi, dan cara kami membantu kendaraan kembali berjalan.`,
   path: "/tentang",
 });
 
@@ -27,16 +27,16 @@ export default function TentangPage() {
         <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
           <Breadcrumbs items={[{ label: "Tentang" }]} />
           <Badge className="mt-4 bg-primary/10 px-2.5 py-1 text-[11px] font-extrabold tracking-wide text-primary uppercase">
-            Toko &amp; Bengkel Aki di {business.city}
+            Layanan Aki Darurat di {business.city}
           </Badge>
           <h1 className="mt-3 max-w-3xl text-3xl font-extrabold tracking-tight text-balance md:text-4xl">
-            Toko Aki yang Bisa Anda Tanya Dulu, Sebelum Beli
+            Teknisi Aki yang Datang Saat Anda Membutuhkan
           </h1>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            {business.name} melayani penjualan dan pemasangan aki mobil dan
-            motor. Kami tahu membeli aki itu sering mendadak — makanya kami
-            usahakan prosesnya sesederhana mungkin: tanya dulu boleh, cek dulu
-            boleh, dan Anda tidak dipaksa beli yang tidak perlu.
+            {business.name} membantu kondisi aki darurat untuk mobil dan
+            motor. Saat kendaraan sulit starter, teknisi kami mengecek kondisi
+            aki, menjelaskan penyebabnya, lalu membantu jumper, ganti, atau
+            memasang aki yang sesuai di lokasi.
           </p>
         </div>
       </div>
@@ -50,7 +50,7 @@ export default function TentangPage() {
               </h2>
               <ul className="mt-4 flex flex-col gap-3 text-sm leading-relaxed text-muted-foreground">
                 {[
-                  "Menjual aki mobil dan motor berbagai merek — dari pilihan hemat sampai premium.",
+                  "Membantu menyiapkan aki mobil dan motor dari merek terpercaya saat kondisi darurat.",
                   "Memeriksa kondisi aki dan tegangan pengisian, bukan asal ganti.",
                   "Memasang aki baru langsung di tempat dan mengetes starter sebelum Anda pulang.",
                   "Membantu mencarikan tipe aki yang cocok kalau Anda tidak yakin, cukup kirim tipe kendaraan via WhatsApp.",
@@ -74,10 +74,9 @@ export default function TentangPage() {
                   pilihan sesuai anggaran Anda — bukan yang paling mahal.
                 </p>
                 <p>
-                  Harga yang tertulis di katalog website adalah harga yang sama
-                  dengan di toko. Kalau harga berubah (misalnya karena kenaikan
-                  harga dari prinsipal), kami sebutkan langsung saat Anda
-                  bertanya, tanpa perlu datang dulu.
+                  Sebelum pengerjaan, teknisi menjelaskan hasil pemeriksaan, kebutuhan penggantian,
+                  dan langkah pemasangan secara transparan agar Anda dapat mengambil
+                  keputusan dengan tenang tanpa tindakan yang tidak perlu.
                 </p>
               </div>
             </section>

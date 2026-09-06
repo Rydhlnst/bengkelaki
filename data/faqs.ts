@@ -14,7 +14,7 @@ export const faqs: Faq[] = [
   {
     question: "Apa perbedaan aki basah dan aki kering (MF)?",
     answer:
-      "Aki basah memakai cairan eletrit yang perlu dicek dan ditambah secara berkala, harganya umumnya lebih murah. Aki kering (MF / maintenance free) tidak perlu dicek airnya, lebih praktis, dan garansinya biasanya lebih panjang, tetapi harganya lebih tinggi. Keduanya tersedia di toko kami untuk mobil; untuk motor umumnya sudah memakai MF.",
+      "Aki basah memakai cairan elektrolit yang perlu dicek dan ditambah secara berkala. Aki kering (MF / maintenance free) tidak perlu dicek airnya dan lebih praktis untuk penggunaan harian. Teknisi kami membantu mengecek tipe yang sesuai dengan kendaraan Anda.",
   },
   {
     question: "Bagaimana mengetahui tipe aki mobil saya?",
@@ -32,24 +32,24 @@ export const faqs: Faq[] = [
       "Ya, pemasangan aki mobil dan motor tersedia di bengkel kami. Cukup datang langsung, umumnya pemasangan selesai dalam waktu singkat. Untuk ketersediaan teknisi saat Anda datang, konfirmasi dulu lewat WhatsApp agar tidak menunggu lama.",
   },
   {
-    question: "Berapa harga aki mobil?",
+    question: "Apakah teknisi bisa datang saat aki mati?",
     answer:
-      "Harga aki mobil di toko kami mulai dari kisaran Rp 500 ribuan untuk tipe kecil (NS40) sampai lebih dari Rp 1,5 juta untuk tipe besar seperti N70. Harga terbaru dan tersedianya stok bisa ditanyakan langsung lewat WhatsApp atau dilihat di halaman produk.",
+      "Bisa. Kirim lokasi, tipe kendaraan, dan gejala yang dirasakan melalui WhatsApp. Teknisi kami akan membantu cek, jumper, atau mengganti aki di lokasi sesuai kebutuhan.",
   },
   {
-    question: "Berapa harga aki motor?",
+    question: "Berapa lama teknisi aki datang?",
     answer:
-      "Harga aki motor umumnya berkisar antara Rp 200 ribuan sampai Rp 500 ribuan tergantung tipe dan mereknya. Tipe kecil seperti GTX5L-BS berada di kisaran bawah, sedangkan tipe premium seperti Motobatt berada di kisaran atas.",
+      "Waktu tiba mengikuti lokasi dan kondisi lalu lintas. Setelah menerima lokasi, tim kami menginformasikan estimasi kedatangan dan mengirim teknisi express yang tersedia.",
   },
   {
-    question: "Apakah bisa konsultasi sebelum membeli?",
+    question: "Apakah bisa konsultasi sebelum ganti aki?",
     answer:
-      "Bisa, dan sebaiknya memang begitu. Kirim merek, tipe, dan tahun kendaraan Anda melalui WhatsApp. Kami bantu rekomendasikan pilihan aki yang sesuai beserta estimasi harganya. Konsultasi gratis dan tidak ada kewajiban membeli.",
+      "Bisa. Kirim merek, tipe, tahun kendaraan, dan gejala yang dirasakan melalui WhatsApp. Kami bantu mengarahkan pemeriksaan dan tindakan yang sesuai. Konsultasi awal gratis.",
   },
   {
-    question: "Apakah bisa cek stok melalui WhatsApp?",
+    question: "Apakah teknisi bisa menyiapkan tipe aki melalui WhatsApp?",
     answer:
-      "Bisa. Karena stok di toko fisik bisa berubah cepat, kami sarankan konfirmasi dulu ketersediaan tipe aki melalui WhatsApp sebelum datang. Kami akan balas dengan info stok terbaru dan estimasi harga.",
+      "Bisa. Kirim tipe kendaraan dan lokasi melalui WhatsApp agar teknisi dapat mengecek kecocokan serta menyiapkan bantuan yang sesuai.",
   },
 ];
 
@@ -57,17 +57,17 @@ export const productFaqs = (productName: string, brandName: string): Faq[] => [
   {
     question: `Apakah ${productName} cocok untuk kendaraan saya?`,
     answer:
-      "Tipe aki kendaraan bisa berbeda berdasarkan model, tahun produksi, dan spesifikasi kelistrikan kendaraan. Sebelum membeli, cocokkan ukuran aki, kapasitas (Ah), dan posisi terminal dengan aki yang sedang terpasang. Jika belum yakin, hubungi kami melalui WhatsApp dengan mengirimkan merek, tipe, serta tahun kendaraan Anda.",
+      "Tipe aki kendaraan bisa berbeda berdasarkan model, tahun produksi, dan spesifikasi kelistrikan kendaraan. Sebelum mengganti, cocokkan ukuran aki, kapasitas (Ah), dan posisi terminal dengan aki yang sedang terpasang. Jika belum yakin, hubungi kami melalui WhatsApp dengan mengirimkan merek, tipe, serta tahun kendaraan Anda.",
   },
   {
-    question: `Apakah ${productName} ready stok?`,
+    question: `Apakah ${productName} bisa disiapkan teknisi?`,
     answer:
-      "Stok pada halaman ini diperbarui secara berkala, tetapi bisa berubah sepanjang hari karena aki juga dijual langsung di toko. Konfirmasi ketersediaan melalui WhatsApp sebelum datang agar tidak sia-sia.",
+      "Ketersediaan tipe aki dapat berubah sepanjang hari. Konfirmasi melalui WhatsApp sebelum teknisi berangkat agar pemeriksaan dan pemasangan dapat disiapkan.",
   },
   {
     question: `Berapa lama garansi ${productName}?`,
     answer:
-      "Garansi mengikuti ketentuan yang tercantum pada halaman produk ini dan berlaku sesuai syarat garansi dari pabrikannya. Simpan struk pembelian sebagai bukti klaim garansi. Tanyakan detail syarat garansi kepada tim kami saat pembelian.",
+      "Garansi mengikuti ketentuan yang tercantum pada halaman produk ini dan berlaku sesuai syarat garansi dari pabrikannya. Simpan bukti pemasangan sebagai dokumen layanan. Tanyakan detail syarat garansi kepada tim kami saat penanganan.",
   },
   {
     question: `Apakah ${brandName} lebih baik dibanding merek lain?`,

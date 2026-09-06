@@ -29,7 +29,7 @@ export type Product = {
 };
 
 // ============================================================
-// DATA PRODUK — placeholder. Update harga & stok sesuai kondisi toko.
+// DATA REFERENSI AKI — update ketersediaan dan spesifikasi sesuai kondisi layanan.
 // ============================================================
 
 export const products: Product[] = [
@@ -55,16 +55,16 @@ export const products: Product[] = [
     shortDescription: "Aki basah 12V 35Ah yang umum dipakai MPV dan city car keluarga.",
     description: [
       "GS Astra NS40ZL adalah aki basah 12V 35Ah yang banyak dipakai pada MPV dan city car seperti Avanza, Xenia, dan Rush. Tipe ini menjadi salah satu tipe aki mobil yang paling banyak dicari di Indonesia.",
-      "Sebelum membeli, cocokkan dulu tipe aki yang sedang terpasang di kendaraan Anda. Jika ragu, kirim tipe dan tahun kendaraan lewat WhatsApp, kami bantu cek.",
+      "Sebelum mengganti, cocokkan dulu tipe aki yang sedang terpasang di kendaraan Anda. Jika ragu, kirim tipe dan tahun kendaraan lewat WhatsApp, kami bantu cek.",
     ],
     highlights: [
       "Tipe yang umum dipakai MPV keluarga",
       "Sparepart pengganti mudah dicari",
       "Bisa langsung dipasang di bengkel kami",
     ],
-    seoTitle: "Aki GS Astra NS40ZL 12V 35Ah — Harga & Spesifikasi",
+    seoTitle: "Aki GS Astra NS40ZL 12V 35Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki GS Astra NS40ZL 12V 35Ah untuk Avanza, Xenia, Rush dan kendaraan sekelasnya. Cek harga dan stok, tanya langsung via WhatsApp.",
+      "Aki GS Astra NS40ZL 12V 35Ah untuk Avanza, Xenia, Rush dan kendaraan sekelasnya. Konfirmasi ketersediaan dan pemasangan, hubungi teknisi via WhatsApp.",
   },
   {
     id: "p02",
@@ -94,9 +94,9 @@ export const products: Product[] = [
       "Ukuran dan terminal sama dengan NS40ZL basah",
       "Garansi lebih panjang dari versi basah",
     ],
-    seoTitle: "Aki GS Astra MF NS40ZL 12V 35Ah — Harga & Spesifikasi",
+    seoTitle: "Aki GS Astra MF NS40ZL 12V 35Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki kering GS Astra MF NS40ZL 12V 35Ah untuk Avanza, Xenia, Rush. Tanpa cek air aki. Cek harga dan stok via WhatsApp.",
+      "Aki kering GS Astra MF NS40ZL 12V 35Ah untuk Avanza, Xenia, Rush. Tanpa cek air aki. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p03",
@@ -125,9 +125,9 @@ export const products: Product[] = [
       "Tipe standar JIS, mudah dicocokkan",
       "Bisa langsung dipasang di bengkel kami",
     ],
-    seoTitle: "Aki Yuasa NS40ZL 12V 35Ah — Harga & Spesifikasi",
+    seoTitle: "Aki Yuasa NS40ZL 12V 35Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki Yuasa NS40ZL 12V 35Ah untuk Avanza, Xenia, Ertiga. Cek harga terbaru dan ketersediaan stok via WhatsApp.",
+      "Aki Yuasa NS40ZL 12V 35Ah untuk Avanza, Xenia, Ertiga. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p04",
@@ -149,16 +149,16 @@ export const products: Product[] = [
     shortDescription: "Aki basah 12V 45Ah untuk LCGC dan MPV kompak.",
     description: [
       "GS Astra NS60L adalah aki basah 12V 45Ah yang umum dipakai mobil LCGC seperti Calya, Sigra, Agya, dan Ayla, serta beberapa MPV kompak.",
-      "Ukurannya lebih besar dari NS40, jadi pastikan tipe aki kendaraan Anda memang NS60 sebelum membeli.",
+      "Ukurannya lebih besar dari NS40, jadi pastikan tipe aki kendaraan Anda memang NS60 sebelum mengganti.",
     ],
     highlights: [
       "Tipe umum untuk mobil LCGC",
       "Kapasitas 45Ah untuk kebutuhan listrik standar",
       "Bisa langsung dipasang di bengkel kami",
     ],
-    seoTitle: "Aki GS Astra NS60L 12V 45Ah — Harga & Spesifikasi",
+    seoTitle: "Aki GS Astra NS60L 12V 45Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki GS Astra NS60L 12V 45Ah untuk Calya, Sigra, Agya, Ayla. Cek harga dan stok langsung via WhatsApp.",
+      "Aki GS Astra NS60L 12V 45Ah untuk Calya, Sigra, Agya, Ayla. Konfirmasi ketersediaan dan pemasangan langsung via WhatsApp.",
   },
   {
     id: "p05",
@@ -187,9 +187,9 @@ export const products: Product[] = [
       "Garansi 18 bulan",
       "Ukuran kompak untuk city car",
     ],
-    seoTitle: "Aki Amaron GO 38B20L 12V 35Ah — Harga & Spesifikasi",
+    seoTitle: "Aki Amaron GO 38B20L 12V 35Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki kering Amaron GO 38B20L 12V 35Ah untuk Agya, Brio, Karimun. Garansi 18 bulan. Tanya stok via WhatsApp.",
+      "Aki kering Amaron GO 38B20L 12V 35Ah untuk Agya, Brio, Karimun. Garansi 18 bulan. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p06",
@@ -207,19 +207,19 @@ export const products: Product[] = [
     sku: "IN-NS40ZL-MF",
     stock: "tersedia",
     compatibleVehicles: ["Toyota Avanza", "Daihatsu Xenia", "Toyota Rush", "Daihatsu Terios"],
-    shortDescription: "Aki MF 12V 35Ah dengan harga lebih terjangkau.",
+    shortDescription: "Aki MF 12V 35Ah dengan pilihan praktis.",
     description: [
-      "Incoe NS40ZL MF adalah aki maintenance free 12V 35Ah dengan harga yang lebih terjangkau dibanding merek lain dengan tipe serupa.",
+      "Incoe NS40ZL MF adalah aki maintenance free 12V 35Ah dengan karakter praktis dibanding merek lain dengan tipe serupa.",
       "Pilihan yang sering diambil untuk kendaraan harian dengan kebutuhan listrik standar.",
     ],
     highlights: [
-      "Harga lebih terjangkau di kelas MF",
+      "Pilihan praktis di kelas MF",
       "Tanpa perlu cek air aki",
       "Tipe standar NS40ZL",
     ],
-    seoTitle: "Aki Incoe NS40ZL MF 12V 35Ah — Harga & Spesifikasi",
+    seoTitle: "Aki Incoe NS40ZL MF 12V 35Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki kering Incoe NS40ZL MF 12V 35Ah, pilihan hemat untuk Avanza, Xenia, dan kendaraan sekelasnya. Cek stok via WhatsApp.",
+      "Aki kering Incoe NS40ZL MF 12V 35Ah, pilihan praktis untuk Avanza, Xenia, dan kendaraan sekelasnya. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p07",
@@ -247,9 +247,9 @@ export const products: Product[] = [
       "Kapasitas 45Ah",
       "Garansi 12 bulan",
     ],
-    seoTitle: "Aki GS Astra MF NS60L 12V 45Ah — Harga & Spesifikasi",
+    seoTitle: "Aki GS Astra MF NS60L 12V 45Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki kering GS Astra MF NS60L 12V 45Ah untuk Innova, Ertiga, APV, Xpander. Cek harga dan stok via WhatsApp.",
+      "Aki kering GS Astra MF NS60L 12V 45Ah untuk Innova, Ertiga, APV, Xpander. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p08",
@@ -270,16 +270,16 @@ export const products: Product[] = [
     shortDescription: "Aki MF 12V 45Ah dengan garansi 18 bulan.",
     description: [
       "Amaron HI-LIFE NS60L adalah aki maintenance free 12V 45Ah untuk MPV dan sedan keluarga. Garansinya 18 bulan, tergolong panjang untuk kelasnya.",
-      "Stok tipe ini berjalan terbatas. Tanyakan dulu ketersediaannya sebelum datang.",
+      "Ketersediaan tipe ini dapat berubah. Konfirmasi melalui WhatsApp sebelum teknisi berangkat.",
     ],
     highlights: [
       "Garansi 18 bulan",
       "Maintenance free",
       "Untuk MPV dan sedan keluarga",
     ],
-    seoTitle: "Aki Amaron HI-LIFE NS60L 12V 45Ah — Harga & Spesifikasi",
+    seoTitle: "Aki Amaron HI-LIFE NS60L 12V 45Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki kering Amaron HI-LIFE NS60L 12V 45Ah, garansi 18 bulan. Stok terbatas, tanya dulu via WhatsApp.",
+      "Aki kering Amaron HI-LIFE NS60L 12V 45Ah, garansi 18 bulan. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p09",
@@ -307,9 +307,9 @@ export const products: Product[] = [
       "Tipe standar yang mudah dicocokkan",
       "Bisa langsung dipasang di bengkel kami",
     ],
-    seoTitle: "Aki GS Astra N50ZL 12V 50Ah — Harga & Spesifikasi",
+    seoTitle: "Aki GS Astra N50ZL 12V 50Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki GS Astra N50ZL 12V 50Ah untuk Camry, Accord, CR-V dan sedan/SUV lainnya. Cek harga dan stok via WhatsApp.",
+      "Aki GS Astra N50ZL 12V 50Ah untuk Camry, Accord, CR-V dan sedan/SUV lainnya. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p10",
@@ -336,11 +336,11 @@ export const products: Product[] = [
     highlights: [
       "Kapasitas 70Ah untuk kendaraan diesel",
       "Tipe umum untuk double cabin dan SUV",
-      "Stok terbatas — tanya dulu via WhatsApp",
+      "Konfirmasi tipe sebelum teknisi berangkat",
     ],
-    seoTitle: "Aki GS Astra N70ZL 12V 70Ah — Harga & Spesifikasi",
+    seoTitle: "Aki GS Astra N70ZL 12V 70Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki GS Astra N70ZL 12V 70Ah untuk Fortuner, Pajero Sport, Triton, Ranger. Stok terbatas, tanya via WhatsApp.",
+      "Aki GS Astra N70ZL 12V 70Ah untuk Fortuner, Pajero Sport, Triton, Ranger. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p11",
@@ -368,9 +368,9 @@ export const products: Product[] = [
       "Maintenance free",
       "Kapasitas 45Ah",
     ],
-    seoTitle: "Aki Bosch M3 NS60L 12V 45Ah — Harga & Spesifikasi",
+    seoTitle: "Aki Bosch M3 NS60L 12V 45Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki kering Bosch M3 NS60L 12V 45Ah untuk Jazz, City, Brio Satya, Yaris. Cek harga dan stok via WhatsApp.",
+      "Aki kering Bosch M3 NS60L 12V 45Ah untuk Jazz, City, Brio Satya, Yaris. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p12",
@@ -398,11 +398,11 @@ export const products: Product[] = [
     highlights: [
       "Tipe umum motor matic 110cc",
       "Maintenance free",
-      "Harga terjangkau",
+      "Pilihan praktis",
     ],
-    seoTitle: "Aki Motor GS Astra GTX5L-BS 12V 4Ah — Harga & Spesifikasi",
+    seoTitle: "Aki Motor GS Astra GTX5L-BS 12V 4Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki motor MF GS Astra GTX5L-BS 12V 4Ah untuk BeAT, Scoopy, Vario 110, Genio. Cek harga dan stok via WhatsApp.",
+      "Aki motor MF GS Astra GTX5L-BS 12V 4Ah untuk BeAT, Scoopy, Vario 110, Genio. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p13",
@@ -431,9 +431,9 @@ export const products: Product[] = [
       "Maintenance free",
       "Tipe standar YTX5L-BS",
     ],
-    seoTitle: "Aki Motor Yuasa YTX5L-BS 12V 4Ah — Harga & Spesifikasi",
+    seoTitle: "Aki Motor Yuasa YTX5L-BS 12V 4Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki motor MF Yuasa YTX5L-BS 12V 4Ah untuk BeAT, Scoopy, Genio, Mio. Cek harga dan stok via WhatsApp.",
+      "Aki motor MF Yuasa YTX5L-BS 12V 4Ah untuk BeAT, Scoopy, Genio, Mio. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p14",
@@ -461,9 +461,9 @@ export const products: Product[] = [
       "Maintenance free",
       "Untuk motor matic harian",
     ],
-    seoTitle: "Aki Motor Amaron GTZ5S 12V 4Ah — Harga & Spesifikasi",
+    seoTitle: "Aki Motor Amaron GTZ5S 12V 4Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki motor MF Amaron GTZ5S 12V 4Ah untuk BeAT, Scoopy, Vario 110, Mio. Garansi 12 bulan. Tanya stok via WhatsApp.",
+      "Aki motor MF Amaron GTZ5S 12V 4Ah untuk BeAT, Scoopy, Vario 110, Mio. Garansi 12 bulan. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p15",
@@ -481,19 +481,19 @@ export const products: Product[] = [
     sku: "IN-GTZ5S",
     stock: "tersedia",
     compatibleVehicles: ["Honda BeAT", "Honda Scoopy", "Honda Genio", "Yamaha Mio"],
-    shortDescription: "Aki motor MF dengan harga paling hemat.",
+    shortDescription: "Aki motor MF dengan pilihan praktis.",
     description: [
-      "Incoe GTZ5S adalah aki MF 12V 4Ah untuk motor matic dengan harga paling hemat di kelasnya.",
+      "Incoe GTZ5S adalah aki MF 12V 4Ah untuk motor matic dengan pilihan praktis di kelasnya.",
       "Pilihan yang umum diambil untuk motor harian dengan kebutuhan listrik standar tanpa aksesori tambahan.",
     ],
     highlights: [
-      "Harga paling hemat di kelasnya",
+      "Pilihan praktis di kelasnya",
       "Maintenance free",
       "Untuk motor matic harian",
     ],
-    seoTitle: "Aki Motor Incoe GTZ5S 12V 4Ah — Harga & Spesifikasi",
+    seoTitle: "Aki Motor Incoe GTZ5S 12V 4Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki motor MF Incoe GTZ5S 12V 4Ah, pilihan hemat untuk BeAT, Scoopy, Vario 110, Mio. Cek stok via WhatsApp.",
+      "Aki motor MF Incoe GTZ5S 12V 4Ah, pilihan praktis untuk BeAT, Scoopy, Vario 110, Mio. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p16",
@@ -521,9 +521,9 @@ export const products: Product[] = [
       "Kapasitas 6Ah",
       "Maintenance free",
     ],
-    seoTitle: "Aki Motor GS Astra GTX7L-BS 12V 6Ah — Harga & Spesifikasi",
+    seoTitle: "Aki Motor GS Astra GTX7L-BS 12V 6Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki motor MF GS Astra GTX7L-BS 12V 6Ah untuk Vario 125/150, PCX, Lexi. Cek harga dan stok via WhatsApp.",
+      "Aki motor MF GS Astra GTX7L-BS 12V 6Ah untuk Vario 125/150, PCX, Lexi. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p17",
@@ -552,9 +552,9 @@ export const products: Product[] = [
       "Kapasitas 7Ah",
       "Maintenance free",
     ],
-    seoTitle: "Aki Motor Yuasa YTX7A-BS 12V 7Ah — Harga & Spesifikasi",
+    seoTitle: "Aki Motor Yuasa YTX7A-BS 12V 7Ah — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki motor MF Yuasa YTX7A-BS 12V 7Ah untuk CB150, CBR150R, GSX150. Cek harga dan stok via WhatsApp.",
+      "Aki motor MF Yuasa YTX7A-BS 12V 7Ah untuk CB150, CBR150R, GSX150. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
   {
     id: "p18",
@@ -582,9 +582,9 @@ export const products: Product[] = [
       "Terminal quad-flex fleksibel",
       "Cocok untuk upgrade dari aki standar",
     ],
-    seoTitle: "Aki Motor Motobatt MBTX7U 12V 7Ah AGM — Harga & Spesifikasi",
+    seoTitle: "Aki Motor Motobatt MBTX7U 12V 7Ah AGM — Aki Darurat & Spesifikasi",
     seoDescription:
-      "Aki motor AGM Motobatt MBTX7U 12V 7Ah untuk upgrade Vario, PCX, CB150, NMAX. Stok terbatas, tanya via WhatsApp.",
+      "Aki motor AGM Motobatt MBTX7U 12V 7Ah untuk upgrade Vario, PCX, CB150, NMAX. Konfirmasi ketersediaan dan pemasangan via WhatsApp.",
   },
 ];
 

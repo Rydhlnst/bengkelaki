@@ -68,13 +68,13 @@ export const brands: Brand[] = [
     origin: "Indonesia",
     vehicleTypes: ["mobil", "motor"],
     shortDescription:
-      "Aki MF dengan harga lebih terjangkau untuk mobil dan motor harian.",
+      "Aki MF praktis untuk mobil dan motor harian.",
     description: [
-      "Incoe adalah merek aki MF yang sering dicari karena harganya lebih terjangkau dibanding merek lain dengan tipe yang sama.",
+      "Incoe adalah merek aki MF yang praktis untuk kendaraan harian dan mudah disesuaikan dengan tipe kendaraan.",
       "Cocok untuk kendaraan harian yang pemakaiannya tidak berat, baik mobil city car maupun motor matic.",
     ],
     strengths: [
-      "Harga lebih terjangkau di kelas aki MF",
+      "Pilihan praktis untuk aki MF",
       "Tersedia untuk mobil dan motor",
       "Pilihan yang umum untuk kendaraan harian",
     ],

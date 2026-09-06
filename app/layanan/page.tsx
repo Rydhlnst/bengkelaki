@@ -22,7 +22,7 @@ import { waGeneralMessage, waLink } from "@/lib/whatsapp";
 export const metadata: Metadata = buildMetadata({
   title: `Layanan Bengkel Aki — Ganti & Cek Aki di ${business.city}`,
   description:
-    "Layanan bengkel aki: jual aki mobil dan motor, ganti aki, cek kondisi aki, cek tegangan aki, dan konsultasi pemilihan aki. Datang langsung atau tanya via WhatsApp.",
+    "Layanan aki darurat: teknisi express untuk ganti aki mobil dan motor, jumper, cek kondisi, cek tegangan, dan pemasangan di lokasi Jakarta. Hubungi kami via WhatsApp.",
   path: "/layanan",
 });
 
@@ -38,7 +38,7 @@ const serviceIcons = {
 const serviceFaqs = faqs.filter((f) =>
   [
     "Apakah tersedia pemasangan aki?",
-    "Apakah bisa konsultasi sebelum membeli?",
+    "Apakah bisa konsultasi sebelum ganti aki?",
     "Apakah aki baru bisa langsung dipasang?",
     "Bagaimana mengetahui aki mulai lemah?",
   ].includes(f.question)
@@ -56,9 +56,9 @@ const steps = [
       "Aki lama dicek dulu — kondisi fisik, tegangan, dan hasil pengisian daya — supaya Anda tidak ganti aki kalau belum perlu.",
   },
   {
-    title: "Rekomendasi & Harga",
+    title: "Rekomendasi Tindakan",
     description:
-      "Kami rekomendasikan pilihan aki yang sesuai kendaraan dan anggaran Anda, lengkap dengan harganya.",
+      "Kami membantu menentukan tindakan dan tipe aki yang sesuai dengan kondisi kendaraan Anda.",
   },
   {
     title: "Pasang & Selesai",
@@ -77,9 +77,9 @@ export default function LayananPage() {
             Layanan Bengkel Aki di {business.city}
           </h1>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            Kami tidak hanya menjual aki. Kalau mobil Anda susah starter,
+            Kami menangani kondisi aki darurat. Kalau mobil Anda susah starter,
             datang saja — kami cek dulu kondisi akinya. Kadang masalahnya bukan
-            di aki, dan Anda berhak tahu sebelum membeli yang baru.
+            di aki, dan Anda berhak tahu sebelum penggantian dilakukan.
           </p>
           <Button asChild size="lg" className="mt-6">
             <a

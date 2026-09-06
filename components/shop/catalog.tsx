@@ -209,9 +209,7 @@ export function Catalog({ products }: Props) {
             </SelectTrigger>
             <SelectContent position="popper">
               <SelectItem value="relevan">Paling Relevan</SelectItem>
-              <SelectItem value="termurah">Harga Terendah</SelectItem>
-              <SelectItem value="termahal">Harga Tertinggi</SelectItem>
-            </SelectContent>
+                          </SelectContent>
           </Select>
           <Button
             variant="outline"
@@ -262,11 +260,11 @@ export function Catalog({ products }: Props) {
         ) : (
           <div className="flex flex-col items-start gap-4 rounded-md border border-dashed bg-muted p-8 sm:items-center sm:text-center">
             <h2 className="text-lg font-extrabold tracking-tight">
-              Aki yang Anda cari belum ada di katalog
+              Tipe aki yang Anda cari belum ada di referensi
             </h2>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              Stok toko kami lebih banyak dari yang tampil di website. Kirim
-              tipe kendaraan Anda, kami cek ketersediaannya langsung dari toko.
+              Kirim tipe kendaraan dan lokasi Anda melalui WhatsApp, kami bantu cek
+              kecocokan serta ketersediaan bantuan teknisi di area Anda.
             </p>
             <Button asChild size="lg">
               <a

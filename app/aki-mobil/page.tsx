@@ -4,9 +4,9 @@ import { business } from "@/config/business";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: `Aki Mobil ${business.city} — Harga & Pilihan Aki`,
+  title: `Aki Mobil Darurat ${business.city} — Teknisi Express 24 Jam`,
   description:
-    "Jual aki mobil di Jakarta: tipe NS40, NS60, N50, N70 dari GS Astra, Yuasa, Amaron, dan merek lain. Lihat spesifikasi dan harga, tanya stok via WhatsApp.",
+    "Layanan aki mobil darurat 24 jam di Jakarta. Teknisi express membantu cek, jumper, ganti, dan pasang aki untuk NS40, NS60, N50, N70, dan tipe lainnya.",
   path: "/aki-mobil",
 });
 
@@ -14,12 +14,12 @@ export default function AkiMobilPage() {
   return (
     <VehicleCategory
       vehicleType="mobil"
-      heading={`Aki Mobil di ${business.city} — Lengkap dengan Harga`}
+      heading={`Bantuan Aki Mobil Darurat di ${business.city}`}
       intro={[
-        "Mencari aki mobil yang cocok tanpa harus datang duluan ke bengkel? Di halaman ini Anda bisa lihat tipe aki yang tersedia, spesifikasinya, dan harga estimasinya.",
-        "Tersedia aki basah dan aki kering (MF) untuk city car, MPV, SUV, sedan, hingga pickup dan kendaraan niaga. Kalau belum yakin tipe yang cocok, kirim merek dan tipe kendaraan Anda via WhatsApp — kami bantu carikan.",
+        "Mobil tidak bisa starter atau aki mulai lemah? Teknisi kami membantu mengecek tipe aki, membawa pengganti yang sesuai, dan memasangnya di lokasi Anda.",
+        "Layanan tersedia untuk aki basah dan aki kering (MF) pada city car, MPV, SUV, sedan, pickup, hingga kendaraan niaga. Kirim merek, tipe, tahun kendaraan, dan lokasi melalui WhatsApp untuk bantuan express.",
       ]}
-      faqQuestion="Pertanyaan Seputar Pembelian Aki Mobil"
+      faqQuestion="FAQ Aki Mobil Darurat"
     />
   );
 }
