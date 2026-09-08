@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { cn } from "cn";
 import { Header } from "@/components/site/header";
@@ -8,6 +9,7 @@ import { ContactLocation } from "@/components/home/contact-location";
 import { StickyMobileCTA } from "@/components/site/sticky-mobile-cta";
 import { FloatingWhatsApp } from "@/components/site/floating-whatsapp";
 import { JsonLd } from "@/components/site/json-ld";
+import { GoogleAdsTracking } from "@/components/site/google-ads-tracking";
 import { business } from "@/config/business";
 
 const jakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
@@ -47,6 +49,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="id" className={cn("h-full antialiased", jakartaSans.variable)}>
       <body className="flex min-h-full flex-col font-sans">
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18437592119');`}
+        </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18437592119"
+          strategy="afterInteractive"
+        />
+        <GoogleAdsTracking />
         <JsonLd data={siteJsonLd} />
         <Header />
         <main className="flex-1 pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">{children}</main>
