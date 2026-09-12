@@ -10,6 +10,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { business } from "@/config/business";
 import { brands, getBrand } from "@/data/brands";
 import { products } from "@/data/products";
+import { referenceMedia } from "@/data/reference-media";
 import { buildMetadata } from "@/lib/seo";
 import { waBrandMessage, waLink } from "@/lib/whatsapp";
 
@@ -25,10 +26,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const brand = getBrand(slug);
   if (!brand) return {};
+  const image = referenceMedia.brands[brand.slug as keyof typeof referenceMedia.brands];
   return buildMetadata({
     title: `Layanan Aki ${brand.name} ${business.city} — Teknisi Express`,
     description: `Bantuan teknisi untuk aki ${brand.name} mobil dan motor di ${business.city}. Cek kecocokan tipe, ketersediaan, dan layanan pemasangan melalui WhatsApp.`,
     path: `/merek/${brand.slug}`,
+    image: image?.src,
   });
 }
 
