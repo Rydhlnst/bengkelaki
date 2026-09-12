@@ -12,6 +12,10 @@ import { business } from "@/config/business";
 
 export type Crumb = { label: string; href?: string };
 
+function absoluteUrl(path: string) {
+  return new URL(path, business.siteUrl).toString();
+}
+
 export function Breadcrumbs({ items }: { items: Crumb[] }) {
   const allItems: Crumb[] = [{ label: "Beranda", href: "/" }, ...items];
 
@@ -22,7 +26,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
       "@type": "ListItem",
       position: i + 1,
       name: item.label,
-      ...(item.href ? { item: `${business.siteUrl}${item.href}` } : {}),
+      item: absoluteUrl(item.href ?? "/"),
     })),
   };
 

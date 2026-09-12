@@ -26,7 +26,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) return {};
-  return buildMetadata({ title: product.seoTitle, description: product.seoDescription, path: "/produk/" + product.slug });
+  const image = getProductReferenceImage(product.brandSlug, product.vehicleType);
+  return buildMetadata({ title: product.seoTitle, description: product.seoDescription, path: "/produk/" + product.slug, image: image?.src });
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -53,9 +54,20 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     "@type": "Product",
     name: product.name,
     description: product.shortDescription,
+    url: `${business.siteUrl}/produk/${product.slug}`,
+    ...(media ? { image: [media.src.startsWith("http") ? media.src : business.siteUrl + media.src] } : {}),
     sku: product.sku,
     brand: { "@type": "Brand", name: brand?.name ?? product.brandSlug },
     additionalProperty: specs.slice(1, 5).map(([name, value]) => ({ "@type": "PropertyValue", name, value })),
+    offers: {
+      "@type": "Offer",
+      url: `${business.siteUrl}/produk/${product.slug}`,
+      priceCurrency: "IDR",
+      price: product.price,
+      availability: `https://schema.org/${product.stock === "tersedia" ? "InStock" : "LimitedAvailability"}`,
+      itemCondition: "https://schema.org/NewCondition",
+      seller: { "@type": "Organization", name: business.name },
+    },
   };
 
   return (
